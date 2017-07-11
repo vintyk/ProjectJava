@@ -1,6 +1,6 @@
 package by.ecp.services;
 
-import by.ecp.dto.JobVacancyDto;
+
 import by.ecp.entity.Job;
 
 import java.util.List;

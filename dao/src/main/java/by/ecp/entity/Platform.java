@@ -1,5 +1,6 @@
 package by.ecp.entity;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -19,6 +20,7 @@ import java.util.Set;
 @Table(name="platforms")
 @NoArgsConstructor
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE, region = "we_trust_you")
+@EqualsAndHashCode
 public class Platform extends BaseEntity {
     @Setter
     @Getter

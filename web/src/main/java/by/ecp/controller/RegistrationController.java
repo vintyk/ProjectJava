@@ -1,10 +1,7 @@
 package by.ecp.controller;
 
-import by.ecp.dto.JobVacancyDto;
 import by.ecp.dto.SystemUserDto;
 import by.ecp.entity.Gender;
-import by.ecp.entity.Privilege;
-import by.ecp.entity.SystemUser;
 import by.ecp.services.PrivilegeService;
 import by.ecp.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -17,14 +17,14 @@
 <nav class="hover-underline-menu" data-menu-underline-from-center>
     <ul class="dropdown menu" data-dropdown-menu>
         <li><a href="/GameProject">Новости</a></li>
-        <li><a href="/GameView">Two</a></li>
-        <li><a href="#">Three</a></li>
+        <li><a href="/GameView">Игры</a></li>
+        <li><a href="/adminToolCreatePublication">Публикации</a></li>
         <li>
             <a href="/adminTool">Администратор</a>
             <ul class="menu vertical">
                 <li><a href="/adminTool">Создать вакансию</a></li>
                 <li><a href="/adminToolCreateGame">Создать Игру</a></li>
-                <li><a href="#">Создать новость</a></li>
+                <li><a href="#">Создать публикацию</a></li>
             </ul>
         </li>
         <li><a href="/logout">Выход</a></li>
@@ -33,15 +33,24 @@
 <div class="row">
     <div class="large-12 columns">
         <h1 th:text="#{games.games}">Игры</h1>
-
-
-
-
+        <div th:if="${not #lists.isEmpty(games)}">
+            <ul th:each="games : ${games}">
+                <div class="callout success">
+                    <li><h5><a href="/GameView" th:text="${games.nameGame}">Создать вакансию</a></h5>
+                        <p th:text="${'Компания разработчик: '+games.company.name}"></p>
+                        <p th:text="${'Жанр: '+games.genre.name}"></p>
+                        <p th:text="${'Модель оплаты: '+games.paymentModel.name}"></p>
+                        <p th:text="${'Сеттинг: '+games.setting.name}"></p>
+                        <p th:text="${'Стадия: '+games.stage.name}"></p>
+                    </li>
+                </div>
+            </ul>
+        </div>
     </div>
 </div>
-    <script src="/resources/js/vendor/jquery.js"></script>
-    <script src="/resources/js/vendor/what-input.js"></script>
-    <script src="/resources/js/vendor/foundation.js"></script>
-    <script src="/resources/js/app.js"></script>
+<script src="/resources/js/vendor/jquery.js"></script>
+<script src="/resources/js/vendor/what-input.js"></script>
+<script src="/resources/js/vendor/foundation.js"></script>
+<script src="/resources/js/app.js"></script>
 </body>
 </html>

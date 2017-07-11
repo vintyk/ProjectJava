@@ -39,7 +39,10 @@ public class PublicationDaoImpl extends BaseDaoImpl<Publication> implements Publ
         Session session = getSessionFactory().getCurrentSession();
         QPublication publication = new QPublication("myPublication");
         JPAQuery<Publication> query = new JPAQuery<>(session);
-        query.select(publication).from(publication).orderBy(publication.datePublication.desc());
+        query
+                .select(publication)
+                .from(publication)
+                .orderBy(publication.datePublication.desc());
         return query.fetchResults().getResults();
     }
 }

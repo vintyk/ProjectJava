@@ -1,9 +1,6 @@
 package by.ecp.entity;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -17,6 +14,7 @@ import java.util.Set;
 @NoArgsConstructor
 @ToString(callSuper = true)
 @Inheritance(strategy = InheritanceType.JOINED)
+@EqualsAndHashCode
 public class Game extends BaseEntity {
     @Getter
     @Setter
