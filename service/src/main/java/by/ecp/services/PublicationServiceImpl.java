@@ -1,11 +1,13 @@
 package by.ecp.services;
 
 import by.ecp.db.PublicationDao;
+import by.ecp.entity.Publication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
+import java.util.List;
 
 /**
  * Created by User on 11.07.2017.
@@ -32,5 +34,10 @@ public class PublicationServiceImpl implements PublicationService {
             textPublication,
             gameId,
             datePublication);
+    }
+
+    @Override
+    public List<Publication> findAllOrderDateDesc() {
+        return publicationDao.findAllOrderDateDesc();
     }
 }
