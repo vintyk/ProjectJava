@@ -60,7 +60,7 @@ public class AdminToolController {
         vacancy.setNameVacancy(vacancyDto.getNameVacancy());
         vacancy.setCompany(company);
         vacancyService.save(vacancy);
-        return "/AdminTool";
+        return "AdminTool";
     }
 }
 

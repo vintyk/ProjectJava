@@ -14,18 +14,20 @@
     <link rel="stylesheet" href="/resources/css/app.css">
 </head>
 <body>
-<h3>Введи страну</h3>
-<!--<form th:action=country.htmlhtml}" method="post" th:object="${country}">-->
+
+<!--<h3>Введи страну</h3>-->
+<!--<form th:action="@{/country}" method="post" th:object="${country}">-->
 <!--<label> Введите название страны:</label>-->
 <!--<ul style="list-style-type: none">-->
-<!--<li th:each="countryName : ${countries}">-->
-<!--<input th:field="*{name}" th:value="${countryName}" type="checkbox"/>-->
-<!--<label th:text="${#strings.capitalize(#strings.toLowerCase(countryName))}"></label>-->
+<!--<li th:each="country : ${country}">-->
+<!--<input th:field="*{name}" th:value="${country}" type="checkbox"/>-->
+<!--<label th:text="${country.name}"></label>-->
 <!--</li>-->
 <!--</ul>-->
 <!--</form>-->
-
+<!--<h3 th:text="${country}"></h3>-->
 <form th:action="@{/country}" method="post" th:object="${country}">
+    <h3 th:text="${country}">
     <input type="text" th:field="*{name}"><br>
     <button type="submit">Отправить</button>
     <br/>
