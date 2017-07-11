@@ -13,8 +13,6 @@ public interface SystemUserDao extends BaseDao<SystemUser> {
 
     SystemUser findByEmail(String name);
 
-    SystemUser findByName(String name);
-
     void saveUser(String nameUser,
                   String family,
                   String eMail,

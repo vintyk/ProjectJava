@@ -10,5 +10,5 @@ import java.util.List;
  */
 public interface PaymentModelDao extends BaseDao<PaymentModel> {
 
-    List<PaymentModel> ListAll();
+//    List<PaymentModel> ListAll();
 }

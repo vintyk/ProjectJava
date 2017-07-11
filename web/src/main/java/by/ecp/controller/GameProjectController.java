@@ -59,12 +59,6 @@ public class GameProjectController {
         return "GameProject";
     }
 
-//    @GetMapping(path = "/GameProject/job1")
-//    public String showGameProjectJobForm(Job job, Model modelJob) {
-//        modelJob.addAttribute("jobs", job);
-//        return "GameProject";
-//    }
-
     @PostMapping(path = "/GameProject")
     public String tempJobVacancyDto(JobVacancyDto jobVacancyDto, Model model) {
         Vacancy vacancy = vacancyService.findOne(jobVacancyDto.getVacancyId());
@@ -80,18 +74,4 @@ public class GameProjectController {
         jobService.save(job);
         return "GameProject";
     }
-
-//    @GetMapping(path = "/GameProject/{vacancyId}")
-//    public String showGameProjectForm(@PathVariable("vacancyId") Long vacancyId, Model model) {
-//        Vacancy vacancy = vacancyService.findOne(vacancyId);
-//        model.addAttribute("vacancy", vacancy);
-//        return "GameProject";
-//    }
-
-//    @PostMapping(path = "/GameProject")
-//    public String saveJob(Job job, Model model) {
-//        Long id = jobService.save(job);
-//        model.addAttribute("vacancyId", id);
-//        return "redirect:/GameProject/{vacancyId}";
-//    }
 }

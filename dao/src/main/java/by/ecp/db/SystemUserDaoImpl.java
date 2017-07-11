@@ -27,14 +27,6 @@ public class SystemUserDaoImpl extends BaseDaoImpl<SystemUser> implements System
         SystemUser result = query.fetchOne();
         return result;
     }
-    @Override
-    public SystemUser findByName(String name) {
-        List<SystemUser> systemUserList = getCurrentSession()
-                .createQuery("select u from SystemUser u where u.nameUser=:name", SystemUser.class)
-                .setParameter("name", name)
-                .getResultList();
-        return systemUserList.size() > 0 ? systemUserList.get(0) : null;
-    }
 
     @Override
     public void saveUser(String nameUser,

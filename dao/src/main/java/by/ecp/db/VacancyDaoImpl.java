@@ -27,14 +27,7 @@ public class VacancyDaoImpl extends BaseDaoImpl<Vacancy> implements VacancyDao{
         vacancy.setCompany(company);
         session.save(vacancy);
     }
-//    @Override
-//    public List<Vacancy> ListAll() {
-//        Session session = getSessionFactory().getCurrentSession();
-//        QVacancy vacancy = new QVacancy("myVacancy");
-//        JPAQuery<Vacancy> query = new JPAQuery<>(session);
-//        query.select(vacancy).from(vacancy);
-//        return query.fetchResults().getResults();
-//    }
+
     @Override
     public Vacancy findByName(String name){
         Session session = getSessionFactory().getCurrentSession();

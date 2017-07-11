@@ -55,12 +55,8 @@ public class PublicationDaoTest extends BaseTest{
         Platform platform1 = new Platform();
         platform1.setName("X-Box");
         platformDao.save(platform1);
-        Platform platform2 = new Platform();
-        platform2.setName("PC");
-        platformDao.save(platform2);
         Set<Long> platformLongs = new HashSet<>();
         platformLongs.add(1L);
-        platformLongs.add(2L);
 
         gameDao.saveGameToExistingPlatform(
                 "Новая офигенная Игра",
@@ -70,22 +66,6 @@ public class PublicationDaoTest extends BaseTest{
                 1L,
                 1L,
                 platformLongs);
-        gameDao.saveGame("Вторая офигенная Игра кросс-платформенная",
-                1L,
-                1L,
-                1L,
-                1L,
-                1L);
-        gameDao.saveGameToExistingPlatform(
-                "Третья офигенная Игра",
-                1L,
-                1L,
-                1L,
-                1L,
-                1L,
-                platformLongs);
-        List<Game> result = gameDao.getGameList();
-        System.out.println(result);
 
         LocalDate localDate1 = LocalDate.now();
         publicationDao.savePublication(
@@ -94,14 +74,6 @@ public class PublicationDaoTest extends BaseTest{
                         "игра по известной вселенной «Звездных войн». ",
                 1L,
                 localDate1);
-
-        LocalDate localDate2 = LocalDate.now();
-        publicationDao.savePublication(
-                "Фанаты полностью перевели дополнение Morrowind",
-                "Тем, кто уже давно играет в MMORPG The Elder Scrolls Online известно, " +
-                        "что существует частичная локализация от фанатов. Проект называется RuESO.",
-                2L,
-                localDate2);
         List<Publication> result2 = publicationDao.findAllOrderDateDesc();
         System.out.println(result2);
         assertNotNull(result2);
