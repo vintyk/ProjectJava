@@ -10,14 +10,4 @@ import by.ecp.entity.Job;
  * Created by SystemUser on 28.06.2017.
  */
 public interface JobDao extends BaseDao<Job> {
-
-    void save(
-            String nameUser,
-            String familyUser,
-            String eMailUser,
-            Gender gender,
-            English english,
-            String comment,
-            Long vacancyId);
-
 }

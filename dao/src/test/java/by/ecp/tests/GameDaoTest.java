@@ -74,12 +74,6 @@ public class GameDaoTest extends BaseTest{
                 1L,
                 1L,
                 platformLongs);
-//        gameDao.saveGame("Вторая офигенная Игра кросс-платформенная",
-//                1L,
-//                1L,
-//                1L,
-//                1L,
-//                1L);
         List<Game> result = gameDao.getGameList();
         System.out.println(result);
         assertNotNull(result);

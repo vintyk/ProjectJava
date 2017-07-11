@@ -12,13 +12,13 @@ import java.util.Set;
 public interface GameDao extends BaseDao<Game> {
 
     List<Game> getGameList();
-
-    void saveGame(String nameGame,
-                  Long companyId,
-                  Long genreId,
-                  Long paymentModelId,
-                  Long settingId,
-                  Long stageId);
+//
+//    void saveGame(String nameGame,
+//                  Long companyId,
+//                  Long genreId,
+//                  Long paymentModelId,
+//                  Long settingId,
+//                  Long stageId);
 
     void saveGameToExistingPlatform(String nameGame,
                                     Long companyId,

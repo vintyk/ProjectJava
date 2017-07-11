@@ -30,39 +30,6 @@ public class GameDaoImpl extends BaseDaoImpl<Game> implements GameDao{
     }
 
     @Override
-    public void saveGame(String nameGame,
-                         Long companyId,
-                         Long genreId,
-                         Long paymentModelId,
-                         Long settingId,
-                         Long stageId) {
-        Session session = getSessionFactory().getCurrentSession();
-
-        Company company = new Company();
-        company.setId(companyId);
-
-        Genre genre = new Genre();
-        genre.setId(genreId);
-
-        PaymentModel paymentModel = new PaymentModel();
-        paymentModel.setId(paymentModelId);
-
-        Setting setting = new Setting();
-        setting.setId(settingId);
-
-        Stage stage = new Stage();
-        stage.setId(stageId);
-
-        Game game = new Game();
-        game.setNameGame(nameGame);
-        game.setCompany(company);
-        game.setGenre(genre);
-        game.setPaymentModel(paymentModel);
-        game.setSetting(setting);
-        game.setStage(stage);
-        session.save(game);
-    }
-    @Override
     public void saveGameToExistingPlatform(String nameGame,
                                            Long companyId,
                                            Long genreId,
