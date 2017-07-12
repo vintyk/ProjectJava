@@ -13,6 +13,7 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import java.sql.Connection;
 import java.util.Properties;
 
 /**
@@ -50,10 +51,10 @@ public class RootConfig {
 
 
     @Value("${hibernate.cache.use_second_level_cache}")
-    private  String useSecondLevelCache;
+    private String useSecondLevelCache;
 
     @Value("${hibernate.cache.use_query_cache}")
-    private  String useQueryCache;
+    private String useQueryCache;
 
     @Value("${hibernate.cache.region.factory_class}")
     private String factoryClass;
@@ -101,8 +102,10 @@ public class RootConfig {
         properties.setProperty("net.sf.ehcache.configurationResourceName", configurationResourceName);
         properties.setProperty("hibernate.connection.isolation", isolation_level);
         properties.setProperty("hibernate.generate_statistics", statistic);
+        properties.setProperty("hibernate.connection.isolation", String.valueOf(Connection.TRANSACTION_REPEATABLE_READ));
         return properties;
     }
+
     @Bean
     public HibernateTransactionManager transactionManager(SessionFactory sessionFactory) {
         HibernateTransactionManager transactionManager = new HibernateTransactionManager();

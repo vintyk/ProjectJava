@@ -20,7 +20,7 @@ import javax.persistence.Table;
 @Table(name = "game_addition_goods")
 @NoArgsConstructor
 @PrimaryKeyJoinColumn(name = "game_id")
-@Cache(usage = CacheConcurrencyStrategy.READ_WRITE, region = "You_are_a_liar")
+@Cache(usage = CacheConcurrencyStrategy.READ_WRITE, region = "cache")
 public class GameAdditionGoods extends Game{
     @Column(name = "name")
     @Getter
