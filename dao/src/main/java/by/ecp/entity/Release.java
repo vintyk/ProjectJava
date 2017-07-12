@@ -15,7 +15,7 @@ import javax.persistence.Table;
 @Table(name = "releases")
 @NoArgsConstructor
 @ToString
-@Cache(usage = CacheConcurrencyStrategy.TRANSACTIONAL, region = "You_are_a_liar")
+@Cache(usage = CacheConcurrencyStrategy.READ_WRITE, region = "You_are_a_liar")
 public class Release extends BaseEntity {
 
 

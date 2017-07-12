@@ -10,11 +10,12 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 /**
- * Created by Vinty on 06.06.2017.
+ * Created by SystemUser on 06.06.2017.
  */
 @MappedSuperclass
 @ToString
 public abstract class BaseEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter
