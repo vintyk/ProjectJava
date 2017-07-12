@@ -14,7 +14,7 @@ import javax.persistence.Embeddable;
 @NoArgsConstructor
 @ToString
 @AllArgsConstructor
-@Cache(usage = CacheConcurrencyStrategy.READ_WRITE, region = "Long_happy_life")
+@Cache(usage = CacheConcurrencyStrategy.TRANSACTIONAL, region = "Long_happy_life")
 public class Address {
     @Column(name = "country")
     @Getter

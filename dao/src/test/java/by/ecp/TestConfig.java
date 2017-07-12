@@ -89,7 +89,7 @@ public class TestConfig {
         properties.setProperty("hibernate.cache.use_second_level_cache", useSecondLevelCache);
         properties.setProperty("hibernate.cache.use_query_cache", useQueryCache);
         properties.setProperty("hibernate.cache.region.factory_class", "org.hibernate.cache.ehcache.EhCacheRegionFactory");
-        properties.setProperty("net.sf.ehcache.configurationResourceName", "/ehcache-config.xml");
+        properties.setProperty("net.sf.ehcache.configurationResourceName", "/ehcache.xml");
         return properties;
     }
     @Bean

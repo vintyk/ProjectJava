@@ -19,7 +19,7 @@ import java.util.Set;
 @Entity
 @Table(name="platforms")
 @NoArgsConstructor
-@Cache(usage = CacheConcurrencyStrategy.READ_WRITE, region = "we_trust_you")
+@Cache(usage = CacheConcurrencyStrategy.TRANSACTIONAL, region = "we_trust_you")
 public class Platform extends BaseEntity {
     @Setter
     @Getter

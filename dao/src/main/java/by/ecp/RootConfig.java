@@ -48,17 +48,27 @@ public class RootConfig {
     @Value("${hibernate.creation_policy}")
     private String creationPolicy;
 
+
     @Value("${hibernate.cache.use_second_level_cache}")
     private  String useSecondLevelCache;
 
     @Value("${hibernate.cache.use_query_cache}")
     private  String useQueryCache;
 
+    @Value("${hibernate.cache.provider_class}")
+    private  String EhCacheProvider;
+
     @Value("${hibernate.cache.region.factory_class}")
     private String factoryClass;
 
     @Value("${net.sf.ehcache.configurationResourceName}")
     private String configurationResourceName;
+
+    @Value("${hibernate.connection.isolation}")
+    private String isolation_level;
+
+    @Value("${hibernate.generate_statistics}")
+    private String statistic;
 
     @Bean
     public DriverManagerDataSource dataSource() {
@@ -88,10 +98,13 @@ public class RootConfig {
         properties.setProperty("hibernate.format_sql", formatSql);
         properties.setProperty("hibernate.hbm2ddl.auto", creationPolicy);
 
+        properties.setProperty("hibernate.cache.provider_class", EhCacheProvider);
         properties.setProperty("hibernate.cache.use_second_level_cache", useSecondLevelCache);
         properties.setProperty("hibernate.cache.use_query_cache", useQueryCache);
         properties.setProperty("hibernate.cache.region.factory_class", factoryClass);
         properties.setProperty("net.sf.ehcache.configurationResourceName", configurationResourceName);
+        properties.setProperty("hibernate.connection.isolation", isolation_level);
+        properties.setProperty("hibernate.generate_statistics", statistic);
         return properties;
     }
     @Bean
