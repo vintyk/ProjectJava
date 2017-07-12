@@ -1,24 +1,26 @@
 package by.ecp.tests;
 
 import by.ecp.dto.GameDto;
-import by.ecp.dto.SystemUserDto;
+import by.ecp.dto.JobVacancyDto;
+import by.ecp.dto.PublicationDto;
 import by.ecp.entity.*;
 import by.ecp.services.*;
-import org.hibernate.collection.internal.PersistentSet;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 import static org.hamcrest.CoreMatchers.notNullValue;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 
-public class GameServiceTest extends BaseTest {
+public class PublicationServiceTest extends BaseTest {
 
+    @Autowired
+    private PublicationService publicationService;
     @Autowired
     private GameService gameService;
     @Autowired
@@ -32,8 +34,14 @@ public class GameServiceTest extends BaseTest {
     @Autowired
     private StageService stageService;
 
+
     @Test
-    public void saveGameToExistingPlatform(){
+    public void save() {
+        PublicationDto publicationDto = new PublicationDto();
+        publicationDto.setNamePublication("fffff");
+        publicationDto.setText("gggggghhhhhjjjjj");
+        publicationDto.setGameId(1L);
+
         GameDto gameDto = new GameDto();
         gameDto.setNameGame("a");
         gameDto.setCompanyId(1L);
@@ -63,11 +71,14 @@ public class GameServiceTest extends BaseTest {
                 gameDto.getStageId(),
                 platformSet
         );
-        Game game = gameService.findById(1L);
-        assertThat(game, notNullValue());
-        List<Game> gameList = gameService.findAll();
-        assertThat(gameList, notNullValue());
+        publicationService.savePublication(
+                publicationDto.getNamePublication(),
+                publicationDto.getText(),
+                publicationDto.getGameId(),
+                LocalDate.now()
+        );
+        List<Publication> publicationList = publicationService.findAllOrderDateDesc();
+        assertThat(publicationList, notNullValue());
     }
 }
-
 

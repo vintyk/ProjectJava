@@ -15,5 +15,6 @@ public interface PublicationService {
             String textPublication,
             Long gameId,
             LocalDate datePublication);
+
     List<Publication> findAllOrderDateDesc();
 }
