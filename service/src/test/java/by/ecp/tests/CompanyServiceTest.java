@@ -21,16 +21,10 @@ public class CompanyServiceTest extends BaseTest{
     public void findAll(){
         Company company = new Company();
         company.setName("a");
+        companyService.save(company);
         List<Company> companyList = companyService.findAll();
         assertThat(companyList, notNullValue());
-    }
-    @Test
-    public void findById(){
-        Company company = new Company();
-        company.setName("a");
-        companyService.save(company);
         Company company1 = companyService.findById(1L);
         assertThat(company1, notNullValue());
     }
-
 }

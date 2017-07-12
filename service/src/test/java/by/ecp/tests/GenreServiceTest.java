@@ -23,16 +23,10 @@ public class GenreServiceTest extends BaseTest{
     public void findAll(){
         Genre genre = new Genre();
         genre.setName("a");
+        genreService.save(genre);
         List<Genre> genreList = genreService.findAll();
         assertThat(genreList, notNullValue());
-    }
-    @Test
-    public void findById(){
-        Genre genre = new Genre();
-        genre.setName("a");
-        genreService.save(genre);
         Genre genre1 = genreService.findOne(1L);
         assertThat(genre1, notNullValue());
     }
-
 }
