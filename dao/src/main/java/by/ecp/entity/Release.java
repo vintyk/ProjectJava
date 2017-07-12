@@ -9,7 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 /**
- * Created by SystemUser on 05.06.2017.
+ * Created by Vinty on 05.06.2017.
  */
 @Entity
 @Table(name = "releases")

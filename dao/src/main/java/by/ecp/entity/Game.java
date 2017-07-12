@@ -1,13 +1,16 @@
 package by.ecp.entity;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Created by SystemUser on 02.06.2017.
+ * Created by Vinty on 02.06.2017.
  */
 @Entity
 @Table(name = "games")

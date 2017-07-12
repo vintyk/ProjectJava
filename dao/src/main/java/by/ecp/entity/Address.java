@@ -1,14 +1,14 @@
 package by.ecp.entity;
 
 import lombok.*;
-import org.hibernate.annotations.*;
 import org.hibernate.annotations.Cache;
-import org.springframework.stereotype.Repository;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
 
 /**
- * Created by SystemUser on 12.06.2017.
+ * Created by Vinty on 12.06.2017.
  */
 @Embeddable
 @NoArgsConstructor
