@@ -29,6 +29,11 @@ public class GenreServiceImpl implements GenreService {
     }
 
     @Override
+    public void save(Genre genre) {
+        genreDao.save(genre);
+    }
+
+    @Override
     public Genre findOne(Long id) {
         return genreDao.findOne(id);
     }

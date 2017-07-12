@@ -1,26 +1,26 @@
-package by.ecp;
+package by.ecp.config;
 
+import org.h2.jdbcx.JdbcDataSource;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import java.util.Properties;
 
-/**
- * Created by Vinty on 21.06.2017.
- */
 @Configuration
-@ComponentScan(basePackages = "by.ecp")
+@ComponentScan(basePackages = {"by.ecp"})
 @EnableTransactionManagement
 @PropertySource("classpath:database.properties")
 public class TestConfig {
+
+    @Value("${jdbc.url}")
+    private String url;
 
     @Value("${jdbc.url}")
     private String dbUrl;
@@ -46,24 +46,24 @@ public class TestConfig {
     @Value("${hibernate.creation_policy}")
     private String creationPolicy;
 
+
     @Value("${hibernate.cache.use_second_level_cache}")
-    private  String useSecondLevelCache;
+    private String secondLevelCache;
 
-    @Value("{hibernate.cache.use_query_cache}")
-    private  String useQueryCache;
+    @Value("${hibernate.cache.use_query_cache}")
+    private String queryCache;
 
-//    @Value("{hibernate.cache.region.factory_class}")
-//    private String factoryClass;
+    @Value("${hibernate.cache.region.factory_class}")
+    private String factory;
 
-    @Value("{net.sf.ehcache.configurationResourceName}")
-    private String configurationResourceName;
+    @Value("${hibernate.generate_statistics}")
+    private String statistics;
 
     @Bean
-    public DriverManagerDataSource dataSource() {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setUrl(dbUrl);
-        dataSource.setDriverClassName(driver);
-        dataSource.setUsername(username);
+    public JdbcDataSource dataSource() {
+        JdbcDataSource dataSource = new JdbcDataSource();
+        dataSource.setUrl(url);
+        dataSource.setUser(username);
         dataSource.setPassword(password);
         return dataSource;
     }
@@ -74,7 +74,6 @@ public class TestConfig {
         sessionFactoryBean.setDataSource(dataSource());
         sessionFactoryBean.setPackagesToScan("by.ecp");
         sessionFactoryBean.setHibernateProperties(hibernateProperties());
-
         return sessionFactoryBean;
     }
 
@@ -86,12 +85,14 @@ public class TestConfig {
         properties.setProperty("hibernate.format_sql", formatSql);
         properties.setProperty("hibernate.hbm2ddl.auto", creationPolicy);
 
-        properties.setProperty("hibernate.cache.use_second_level_cache", useSecondLevelCache);
-        properties.setProperty("hibernate.cache.use_query_cache", useQueryCache);
-        properties.setProperty("hibernate.cache.region.factory_class", "org.hibernate.cache.ehcache.EhCacheRegionFactory");
-        properties.setProperty("net.sf.ehcache.configurationResourceName", "/ehcache-config.xml");
+        properties.setProperty("hibernate.cache.use_second_level_cache", secondLevelCache);
+        properties.setProperty("hibernate.cache.use_query_cache", queryCache);
+        properties.setProperty("hibernate.cache.region.factory_class", factory);
+        properties.setProperty("hibernate.generate_statistics", statistics);
         return properties;
     }
+
+
     @Bean
     public HibernateTransactionManager transactionManager(SessionFactory sessionFactory) {
         HibernateTransactionManager transactionManager = new HibernateTransactionManager();

@@ -31,4 +31,9 @@ public class StageServiceImpl implements StageService {
     public Stage findOne(Long id) {
         return stageDao.findOne(id);
     }
+
+    @Override
+    public void save(Stage stage) {
+        stageDao.save(stage);
+    }
 }

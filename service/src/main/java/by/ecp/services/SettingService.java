@@ -13,4 +13,6 @@ public interface SettingService {
 
     Setting findOne(Long id);
 
+    void save(Setting setting);
+
 }

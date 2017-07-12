@@ -12,4 +12,6 @@ public interface GenreService {
 
     List<Genre> findAll();
 
+    void save(Genre genre);
+
 }

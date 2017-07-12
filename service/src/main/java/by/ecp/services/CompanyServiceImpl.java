@@ -32,4 +32,9 @@ public class CompanyServiceImpl implements CompanyService {
     public Company findById(Long id) {
        return companyDao.findOne(id);
     }
+
+    @Override
+    public void save(Company company) {
+        companyDao.save(company);
+    }
 }

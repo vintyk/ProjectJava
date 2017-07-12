@@ -13,4 +13,6 @@ public interface StageService {
 
     Stage findOne(Long id);
 
+    void save(Stage stage);
+
 }

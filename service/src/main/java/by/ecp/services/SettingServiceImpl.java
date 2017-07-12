@@ -31,4 +31,9 @@ public class SettingServiceImpl implements SettingService {
     public Setting findOne(Long id) {
         return settingDao.findOne(id);
     }
+
+    @Override
+    public void save(Setting setting) {
+        settingDao.save(setting);
+    }
 }

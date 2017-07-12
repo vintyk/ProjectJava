@@ -31,4 +31,9 @@ public class PaymentModelServiceImpl implements PaymentModelService {
     public PaymentModel findOne(Long id) {
         return paymentModelDao.findOne(id);
     }
+
+    @Override
+    public void save(PaymentModel paymentModel) {
+        paymentModelDao.save(paymentModel);
+    }
 }

@@ -13,4 +13,6 @@ public interface PaymentModelService  {
     List<PaymentModel> findAll();
 
     PaymentModel findOne(Long id);
+
+    void save(PaymentModel paymentModel);
 }
