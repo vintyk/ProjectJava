@@ -15,7 +15,6 @@ import java.util.List;
  */
 @Service
 @Transactional
-@ContextConfiguration(classes = RootConfig.class)
 public class CompanyServiceImpl implements CompanyService {
     private final CompanyDao companyDao;
 

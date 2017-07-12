@@ -17,7 +17,6 @@ import java.util.Set;
  * Created by Vinty on 05.06.2017.
  */
 @Repository
-@EqualsAndHashCode
 public class GameDaoImpl extends BaseDaoImpl<Game> implements GameDao{
 
     @Override

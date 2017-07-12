@@ -14,7 +14,6 @@ import java.util.Set;
     @Table(name = "users")
     @NoArgsConstructor
     @ToString
-    @EqualsAndHashCode
     public class SystemUser extends BaseEntity {
     @Getter
     @Setter
