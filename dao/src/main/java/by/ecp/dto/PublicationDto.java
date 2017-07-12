@@ -1,12 +1,9 @@
 package by.ecp.dto;
 
-import by.ecp.entity.Game;
-import lombok.*;
-
-import javax.persistence.Column;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import java.time.LocalDate;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  * Created by Vinty on 10.07.2017.
@@ -14,15 +11,7 @@ import java.time.LocalDate;
 @Data
 @NoArgsConstructor
 public class PublicationDto {
-    @Getter
-    @Setter
     private String namePublication;
-
-    @Getter
-    @Setter
     private String text;
-
-    @Getter
-    @Setter
     private Long gameId;
 }

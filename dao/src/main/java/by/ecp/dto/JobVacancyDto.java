@@ -2,10 +2,12 @@ package by.ecp.dto;
 
 import by.ecp.entity.English;
 import by.ecp.entity.Gender;
-import by.ecp.entity.Vacancy;
-import lombok.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
-import javax.persistence.*;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 /**
  * Created by User on 10.07.2017.
@@ -14,33 +16,13 @@ import javax.persistence.*;
 @NoArgsConstructor
 @ToString
 public class JobVacancyDto {
-    @Getter
-    @Setter
     private String nameUser;
-
-    @Getter
-    @Setter
     private String familyUser;
-
-    @Getter
-    @Setter
     private String email;
-
-    @Getter
-    @Setter
     @Enumerated(EnumType.STRING)
     private Gender gender;
-
-    @Getter
-    @Setter
     @Enumerated(EnumType.STRING)
     private English english;
-
-    @Getter
-    @Setter
     private Long vacancyId;
-
-    @Getter
-    @Setter
     private String comment;
 }

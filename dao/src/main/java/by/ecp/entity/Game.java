@@ -14,7 +14,6 @@ import java.util.Set;
 @NoArgsConstructor
 @ToString(callSuper = true)
 @Inheritance(strategy = InheritanceType.JOINED)
-@EqualsAndHashCode
 public class Game extends BaseEntity {
     @Getter
     @Setter
