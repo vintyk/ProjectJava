@@ -1,7 +1,10 @@
 package by.ecp.db;
 
 import by.ecp.common.BaseDaoImpl;
-import by.ecp.entity.*;
+import by.ecp.entity.Gender;
+import by.ecp.entity.Privilege;
+import by.ecp.entity.QSystemUser;
+import by.ecp.entity.SystemUser;
 import com.querydsl.jpa.impl.JPAQuery;
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
@@ -9,11 +12,10 @@ import org.springframework.stereotype.Repository;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Set;
 
 /**
- * Created by SystemUser on 02.06.2017.
+ * Created by Vinty on 02.06.2017.
  */
 @Repository
 public class SystemUserDaoImpl extends BaseDaoImpl<SystemUser> implements SystemUserDao {

@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Created by SystemUser on 05.06.2017.
+ * Created by Vinty on 05.06.2017.
  */
 @Repository
 @EqualsAndHashCode

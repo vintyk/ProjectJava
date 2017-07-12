@@ -1,16 +1,15 @@
 package by.ecp.db;
 
 import by.ecp.common.BaseDaoImpl;
-import by.ecp.entity.*;
+import by.ecp.entity.Company;
+import by.ecp.entity.QVacancy;
+import by.ecp.entity.Vacancy;
 import com.querydsl.jpa.impl.JPAQuery;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
 /**
- * Created by SystemUser on 02.06.2017.
+ * Created by Vinty on 02.06.2017.
  */
 @Repository
 public class VacancyDaoImpl extends BaseDaoImpl<Vacancy> implements VacancyDao{

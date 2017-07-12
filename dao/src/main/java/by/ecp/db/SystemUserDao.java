@@ -7,7 +7,7 @@ import by.ecp.entity.SystemUser;
 import java.util.Set;
 
 /**
- * Created by SystemUser on 20.06.2017.
+ * Created by Vinty on 20.06.2017.
  */
 public interface SystemUserDao extends BaseDao<SystemUser> {
 

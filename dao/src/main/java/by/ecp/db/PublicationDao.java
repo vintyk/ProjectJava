@@ -2,14 +2,12 @@ package by.ecp.db;
 
 import by.ecp.common.BaseDao;
 import by.ecp.entity.Publication;
-
 import java.time.LocalDate;
 import java.util.List;
 
 /**
- * Created by SystemUser on 20.06.2017.
+ * Created by Vinty on 20.06.2017.
  */
-
 public interface PublicationDao extends BaseDao<Publication> {
 
     void savePublication(

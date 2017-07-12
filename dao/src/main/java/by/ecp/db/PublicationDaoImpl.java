@@ -1,20 +1,21 @@
 package by.ecp.db;
 
 import by.ecp.common.BaseDaoImpl;
-import by.ecp.entity.*;
+import by.ecp.entity.Game;
+import by.ecp.entity.Publication;
+import by.ecp.entity.QPublication;
 import com.querydsl.jpa.impl.JPAQuery;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
 import java.util.List;
 
 /**
- * Created by SystemUser on 09.06.2017.
+ * Created by Vinty on 09.06.2017.
  */
 @Repository
-public class PublicationDaoImpl extends BaseDaoImpl<Publication> implements PublicationDao{
+public class PublicationDaoImpl extends BaseDaoImpl<Publication> implements PublicationDao {
 
     @Override
     public void savePublication(
@@ -34,6 +35,7 @@ public class PublicationDaoImpl extends BaseDaoImpl<Publication> implements Publ
         publication.setGame(game);
         session.save(publication);
     }
+
     @Override
     public List<Publication> findAllOrderDateDesc() {
         Session session = getSessionFactory().getCurrentSession();
