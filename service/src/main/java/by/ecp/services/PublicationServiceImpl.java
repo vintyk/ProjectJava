@@ -23,6 +23,7 @@ public class PublicationServiceImpl implements PublicationService {
         this.publicationDao = publicationDao;
     }
 
+    @Loggable
     @Override
     public void savePublication(
             String namePublication,
@@ -37,6 +38,7 @@ public class PublicationServiceImpl implements PublicationService {
     }
 
     @Override
+    @Loggable
     public List<Publication> findAllOrderDateDesc() {
         return publicationDao.findAllOrderDateDesc();
     }

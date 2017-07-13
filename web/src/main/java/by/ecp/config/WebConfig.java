@@ -15,7 +15,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @Import(value = {
         InternationalizationConfig.class,
         ThymeleafConfig.class,
-        RootConfig.class,
+//        RootConfig.class,
         MvcConfig.class,
         })
 public class WebConfig {

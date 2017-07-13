@@ -23,16 +23,19 @@ public class CompanyServiceImpl implements CompanyService {
         this.companyDao = companyDao;
     }
     @Override
+    @Loggable
     public List<Company> findAll() {
         return companyDao.findAll();
     }
 
     @Override
+    @Loggable
     public Company findById(Long id) {
        return companyDao.findOne(id);
     }
 
     @Override
+    @Loggable
     public void save(Company company) {
         companyDao.save(company);
     }

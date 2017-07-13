@@ -24,15 +24,14 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
+    @Loggable
     public List<Game> findAll() {
         return gameDao.findAll();
     }
-
     @Override
     public Game findById(Long id) {
         return gameDao.findOne(id);
     }
-
     @Override
     public void saveGameToExistingPlatform(
                      String nameGame,

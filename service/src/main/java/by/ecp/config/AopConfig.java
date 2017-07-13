@@ -1,6 +1,8 @@
 package by.ecp.config;
 
+import by.ecp.aspects.AnnotationAspect;
 import by.ecp.aspects.Logger;
+import by.ecp.services.GameServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
@@ -11,8 +13,15 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @Configuration
 @EnableAspectJAutoProxy
 public class AopConfig {
+
     @Bean
     public Logger logger() {
         return new Logger();
     }
+
+    @Bean
+    public AnnotationAspect annotationAspect() {
+        return new AnnotationAspect();
+    }
+
 }
