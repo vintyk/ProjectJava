@@ -1,9 +1,13 @@
 package by.ecp.aspects;
-import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.*;
 
-import java.util.Arrays;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+
+
+
 
 /**
  * Created by PloSkiY on 09.07.2017.
@@ -11,17 +15,20 @@ import java.util.Arrays;
 @Aspect
 public class Logger {
 
+    @Around("execution(* *(..)) && @annotation(by.ecp.services.Loggable)")
+    public Object methodLog(ProceedingJoinPoint point)throws Throwable{
+        System.out.println("====================== Around method: =========================");
+        long start = System.currentTimeMillis();
+        Object result = point.proceed();
+        return result;
+    }
 
-    @Around("execution(* by.ecp.*.*(..))")
-    public Object employeeAroundAdvice(ProceedingJoinPoint proceedingJoinPoint){
-        System.out.println("Before invoking ");
-        Object value = null;
-        try {
-            value = proceedingJoinPoint.proceed();
-        } catch (Throwable e) {
-            e.printStackTrace();
-        }
-        System.out.println("After invoking. Return value="+value);
-        return value;
+    @Before("@annotation(by.ecp.services.Loggable)")
+    public void gameListBefore(){
+        System.out.println("====================== Begin method:  =========================");
+    }
+    @After("@annotation(by.ecp.services.Loggable)")
+    public void gameListAfter(){
+        System.out.println("====================== End method:  ===========================");
     }
 }

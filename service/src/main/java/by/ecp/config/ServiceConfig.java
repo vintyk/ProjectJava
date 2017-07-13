@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @Configuration
 @ComponentScan(basePackages = "by.ecp")
-@Import(value = RootConfig.class)
+@Import(value ={RootConfig.class, AopConfig.class})
 @EnableTransactionManagement
 public class ServiceConfig{
 }

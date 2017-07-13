@@ -150,7 +150,15 @@
             <artifactId>aspectjweaver</artifactId>
             <version>1.8.10</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.jcabi</groupId>
+            <artifactId>jcabi-aspects</artifactId>
+            <version>0.22.6</version>
+        </dependency>
     </dependencies>
+
+
 
     <reporting>
         <plugins>
