@@ -2,11 +2,11 @@ package by.ecp.aspects;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
+
+import java.io.*;
+import java.util.List;
 
 
 /**
@@ -33,14 +33,27 @@ public class Logger {
         String ascColorsBegin = (char)27 + "[34;43m";
         String ascColorsEnd = (char)27 + "[0m";
 
-        System.out.println(ascColorsBegin+"***************************************************************"+ascColorsEnd);
+        System.out.println(ascColorsBegin+"*************************************************************************************************"+ascColorsEnd);
         System.out.printf(ascColorsBegin+"Вызываем в сервисе "+
                 joinPoint.getThis().toString()+
                 " метод: "+joinPoint.getSignature().getName()+ascColorsEnd+"\n");
-        System.out.println(ascColorsBegin+"***************************************************************"+ascColorsEnd);
+        System.out.println(ascColorsBegin+"*************************************************************************************************"+ascColorsEnd);
     }
-    @After("@annotation(by.ecp.services.Loggable)")
-    public void gameListAfter(){
-        System.out.println("====================== End method:  ===========================");
+    @AfterReturning(
+            pointcut = "@annotation(by.ecp.services.Loggable)",
+            returning= "result")
+    public void logAfterReturning(JoinPoint joinPoint, Object result) {
+        String ascColorsBegin = (char)27 + "[34;43m";
+        String ascColorsEnd = (char)27 + "[0m";
+        List<Object> newObj = (List<Object>) result;
+        int num = 1;
+        for (Object o : newObj
+        ){
+            System.out.println("перехват : " + joinPoint.getSignature().getName()+" Запись № "+ num++);
+            System.out.println(ascColorsBegin+"***************************************************************"+ascColorsEnd);
+            System.out.println(ascColorsBegin+ o +ascColorsEnd);
+            System.out.println(ascColorsBegin+"***************************************************************"+ascColorsEnd);
+        }
+
     }
 }

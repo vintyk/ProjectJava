@@ -4,6 +4,8 @@ import by.ecp.entity.*;
 import by.ecp.services.*;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.io.*;
+import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -14,23 +16,35 @@ import java.util.Set;
  */
 public class Starter {
       public static void main(String[] args) {
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(RootConfig.class);
+//        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(RootConfig.class);
 
 
-          GameService gameService = context.getBean(GameService.class);
-          Set<Long> platformSet = new HashSet<>();
-          platformSet.add(1L);
-          platformSet.add(2L);
-          platformSet.add(3L);
-          gameService.saveGameToExistingPlatform(
-                  "jjjjjjjj",
-                  1L,
-                  1L,
-                  1L,
-                  1L,
-                  1L,
-                  platformSet
-          );
+          File myFile = new File("Log.txt");
+          try{
+              PrintWriter writer =
+                      new PrintWriter(new BufferedWriter(new FileWriter(myFile, true)));
+              writer.write("Вызываем в сервисе ");
+              writer.flush();
+              writer.close();
+          } catch (IOException e) {
+              e.printStackTrace();
+          }
+
+
+//          GameService gameService = context.getBean(GameService.class);
+//          Set<Long> platformSet = new HashSet<>();
+//          platformSet.add(1L);
+//          platformSet.add(2L);
+//          platformSet.add(3L);
+//          gameService.saveGameToExistingPlatform(
+//                  "jjjjjjjj",
+//                  1L,
+//                  1L,
+//                  1L,
+//                  1L,
+//                  1L,
+//                  platformSet
+//          );
 
           //                JobService jobService = context.getBean(JobService.class);
 //        List<Job> jobList = jobService.findAll();
