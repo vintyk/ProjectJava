@@ -23,18 +23,18 @@ public class PublicationServiceImpl implements PublicationService {
         this.publicationDao = publicationDao;
     }
 
-    @Loggable
+    @LoggableOne
     @Override
     public void savePublication(
             String namePublication,
             String textPublication,
             Long gameId,
             LocalDate datePublication) {
-    publicationDao.savePublication(
-            namePublication,
-            textPublication,
-            gameId,
-            datePublication);
+        publicationDao.savePublication(
+                namePublication,
+                textPublication,
+                gameId,
+                datePublication);
     }
 
     @Override

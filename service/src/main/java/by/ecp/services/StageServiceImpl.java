@@ -23,16 +23,19 @@ public class StageServiceImpl implements StageService {
     }
 
     @Override
+    @Loggable
     public List<Stage> findAll() {
         return stageDao.findAll();
     }
 
     @Override
+    @LoggableOne
     public Stage findOne(Long id) {
         return stageDao.findOne(id);
     }
 
     @Override
+    @LoggableOne
     public void save(Stage stage) {
         stageDao.save(stage);
     }

@@ -1,11 +1,9 @@
 package by.ecp.services;
 
-import by.ecp.RootConfig;
 import by.ecp.db.CompanyDao;
 import by.ecp.entity.Company;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -29,13 +27,13 @@ public class CompanyServiceImpl implements CompanyService {
     }
 
     @Override
-    @Loggable
+    @LoggableOne
     public Company findById(Long id) {
        return companyDao.findOne(id);
     }
 
     @Override
-    @Loggable
+    @LoggableOne
     public void save(Company company) {
         companyDao.save(company);
     }

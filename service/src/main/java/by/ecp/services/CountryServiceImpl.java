@@ -24,17 +24,20 @@ public class CountryServiceImpl implements CountryService {
     }
 
     @Override
+    @LoggableOne
     public Long save(Country country) {
         countryDao.save(country);
         return country.getId();
     }
 
     @Override
+    @LoggableOne
     public Country findOne(Long id) {
         return countryDao.findOne(id);
     }
 
     @Override
+    @Loggable
     public List<Country> findAll() {
         return countryDao.findAll();
     }

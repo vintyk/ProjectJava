@@ -59,6 +59,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @LoggableOne
     public void saveUser(
             String nameUser,
             Set<Long> privilegeSet,
@@ -77,11 +78,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Loggable
     public List<SystemUser> findAll() {
         return systemUserDao.findAll();
     }
 
     @Override
+    @LoggableOne
     public SystemUser findById(Long id) {
         return systemUserDao.findOne(id);
     }

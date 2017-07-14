@@ -23,16 +23,19 @@ public class SettingServiceImpl implements SettingService {
     }
 
     @Override
+    @Loggable
     public List<Setting> findAll() {
         return settingDao.findAll();
     }
 
     @Override
+    @LoggableOne
     public Setting findOne(Long id) {
         return settingDao.findOne(id);
     }
 
     @Override
+    @Loggable
     public void save(Setting setting) {
         settingDao.save(setting);
     }

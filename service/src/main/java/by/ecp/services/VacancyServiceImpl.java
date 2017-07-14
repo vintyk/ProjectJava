@@ -23,16 +23,19 @@ public class VacancyServiceImpl implements VacancyService {
         this.vacancyDao = vacancyDao;
     }
     @Override
+    @Loggable
     public List<Vacancy> findAll() {
         return vacancyDao.findAll();
     }
 
     @Override
+    @LoggableOne
     public Vacancy findOne(Long id) {
         return vacancyDao.findOne(id);
     }
 
     @Override
+    @LoggableOne
     public void save(Vacancy vacancy) {
         vacancyDao.save(vacancy);
     }

@@ -23,16 +23,19 @@ public class PrivilegeServiceImpl implements PrivilegeService {
     }
 
     @Override
+    @LoggableOne
     public void save(Privilege privilege) {
         privilegeDao.save(privilege);
     }
 
     @Override
+    @LoggableOne
     public Privilege findOne(Long id) {
         return privilegeDao.findOne(id);
     }
 
     @Override
+    @Loggable
     public List<Privilege> findAll() {
         return privilegeDao.findAll();
     }
