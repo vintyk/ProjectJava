@@ -24,6 +24,8 @@ import static org.junit.Assert.assertThat;
  */
 public class GameDaoTest extends BaseTest{
     @Autowired
+    private GameAdditionGoodsDao gameAdditionGoodsDao;
+    @Autowired
     private GameDao gameDao;
     @Autowired
     private CompanyDao companyDao;
@@ -79,5 +81,51 @@ public class GameDaoTest extends BaseTest{
         assertNotNull(result);
         assertThat(result, hasSize(1));
     }
+    @Test
+    public void save() {
+        Company company = new Company();
+        company.setName("Valve");
+        companyDao.save(company);
+        Genre genre = new Genre();
+        genre.setName("Гонки");
+        genreDao.save(genre);
+        PaymentModel paymentModel = new PaymentModel();
+        paymentModel.setName("Подписка");
+        paymentModelDao.save(paymentModel);
+        Setting setting = new Setting();
+        setting.setName("Фэнтези");
+        settingDao.save(setting);
+        Stage stage = new Stage();
+        stage.setName("Ранний доступ");
+        stageDao.save(stage);
+
+        Platform platform1 = new Platform();
+        platform1.setName("X-Box");
+        platformDao.save(platform1);
+        Platform platform2 = new Platform();
+        platform2.setName("PC");
+        platformDao.save(platform2);
+        Set<Long> platformLongs = new HashSet<>();
+        platformLongs.add(1L);
+        Set<Platform> platformSet = new HashSet<>();
+        platformSet.add(platform1);
+
+        GameAdditionGoods gameAdditionGoods = new GameAdditionGoods();
+        gameAdditionGoods.setNameGame("AAA");
+        gameAdditionGoods.setCompany(company);
+        gameAdditionGoods.setPlatforms(platformSet);
+        gameAdditionGoods.setStage(stage);
+        gameAdditionGoods.setSetting(setting);
+        gameAdditionGoods.setGenre(genre);
+        gameAdditionGoods.setPaymentModel(paymentModel);
+        gameAdditionGoods.setNameGoods("Excl");
+        gameAdditionGoodsDao.save(gameAdditionGoods);
+        GameAdditionGoods gameAdditionGoods1 = gameAdditionGoodsDao.findOne(gameAdditionGoods);
+        assertNotNull(gameAdditionGoods1);
+        List<GameAdditionGoods> gameAdditionGoods2 = gameAdditionGoodsDao.findAll();
+        assertNotNull(gameAdditionGoods2);
+    }
+
+
 }
 

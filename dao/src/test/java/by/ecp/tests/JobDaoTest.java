@@ -45,7 +45,10 @@ public class JobDaoTest extends BaseTest {
         job.setVacancy(vacancy);
         jobDao.save(job);
         Job result = jobDao.findOne(1L);
-        System.out.println(result);
         assertNotNull(result);
+        List<Job> jobList = jobDao.findAll();
+        System.out.println(result);
+        assertNotNull(jobList);
     }
+
 }

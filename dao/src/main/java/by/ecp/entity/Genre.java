@@ -18,7 +18,6 @@ import javax.persistence.Table;
 @Table(name="genres")
 @ToString
 @NoArgsConstructor
-@Cache(usage = CacheConcurrencyStrategy.READ_WRITE, region = "cache")
 public class Genre extends BaseEntity {
     @Column(name = "name")
     @Getter

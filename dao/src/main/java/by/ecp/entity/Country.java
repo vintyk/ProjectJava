@@ -18,7 +18,6 @@ import javax.persistence.Table;
 @Table(name="countries")
 @ToString
 @NoArgsConstructor
-@Cache(usage = CacheConcurrencyStrategy.READ_WRITE, region = "cache")
 public class Country extends BaseEntity {
     @Column(name = "name")
     @Getter

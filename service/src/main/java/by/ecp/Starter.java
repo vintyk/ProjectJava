@@ -16,14 +16,15 @@ import java.util.Set;
  */
 public class Starter {
       public static void main(String[] args) {
-//        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(RootConfig.class);
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(RootConfig.class);
 
 
-          File myFile = new File("Log.txt");
+          File myFile = new File("log4j.log");
           try{
               PrintWriter writer =
                       new PrintWriter(new BufferedWriter(new FileWriter(myFile, true)));
-              writer.write("Вызываем в сервисе ");
+              writer.println("Вызываем в сервисе ---");
+              writer.println("======================");
               writer.flush();
               writer.close();
           } catch (IOException e) {

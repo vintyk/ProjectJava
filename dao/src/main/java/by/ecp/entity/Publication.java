@@ -17,7 +17,6 @@ import java.time.LocalDate;
 @Table(name = "publications")
 @NoArgsConstructor
 @ToString
-@Cache(usage = CacheConcurrencyStrategy.READ_WRITE, region = "cache")
 public class Publication extends BaseEntity {
     @Getter
     @Setter

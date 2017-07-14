@@ -19,7 +19,6 @@ import javax.persistence.Table;
   @Table(name = "settings")
   @NoArgsConstructor
   @ToString
-  @Cache(usage = CacheConcurrencyStrategy.READ_WRITE, region = "cache")
 public class Setting extends BaseEntity {
     @Getter
     @Setter

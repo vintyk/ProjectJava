@@ -18,7 +18,6 @@ import javax.persistence.Table;
 @Table(name= "payment_models")
 @ToString
 @NoArgsConstructor
-@Cache(usage = CacheConcurrencyStrategy.READ_WRITE, region = "cache")
 public class PaymentModel extends BaseEntity {
     @Column(name = "name")
     @Getter

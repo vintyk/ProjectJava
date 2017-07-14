@@ -18,7 +18,6 @@ import javax.persistence.Table;
 @Table(name = "stages_test")
 @NoArgsConstructor
 @ToString
-@Cache(usage = CacheConcurrencyStrategy.READ_WRITE, region = "cache")
 public class StageTests extends BaseEntity {
     @Getter
     @Setter
