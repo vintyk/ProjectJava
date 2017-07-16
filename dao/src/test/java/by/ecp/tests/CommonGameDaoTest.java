@@ -1,22 +1,27 @@
 package by.ecp.tests;
 
+import by.ecp.common.BaseDao;
 import by.ecp.db.*;
 import by.ecp.entity.*;
+import by.ecp.tests.BaseDaoTest;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import static org.junit.Assert.assertEquals;
+import static org.hamcrest.Matchers.hasSize;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertThat;
 
 /**
- * Created by Vinty on 18.06.2017.
+ * Created by Vinty on 11.06.2017.
  */
-public class PublicationDaoTest extends BaseTest{
+
+public class CommonGameDaoTest extends BaseTest{
+    @Autowired
+    private CommonBaseGameDao commonBaseGameDao;
     @Autowired
     private GameDao gameDao;
     @Autowired
@@ -32,10 +37,10 @@ public class PublicationDaoTest extends BaseTest{
     @Autowired
     private PlatformDao platformDao;
     @Autowired
-    private PublicationDao publicationDao;
+    private BaseDao<CommonBaseGame> dao = new CommonBaseGameDaoImpl();
 
     @Test
-    public void findAllOrderDateDescTest(){
+    public void saveByExistPlatformsTest() {
         Company company = new Company();
         company.setName("Valve");
         companyDao.save(company);
@@ -55,8 +60,12 @@ public class PublicationDaoTest extends BaseTest{
         Platform platform1 = new Platform();
         platform1.setName("X-Box");
         platformDao.save(platform1);
+        Platform platform2 = new Platform();
+        platform2.setName("PC");
+        platformDao.save(platform2);
         Set<Long> platformLongs = new HashSet<>();
         platformLongs.add(1L);
+        platformLongs.add(2L);
 
         gameDao.saveGameToExistingPlatform(
                 "Новая офигенная Игра",
@@ -66,18 +75,11 @@ public class PublicationDaoTest extends BaseTest{
                 1L,
                 1L,
                 platformLongs);
-
-        LocalDate localDate1 = LocalDate.now();
-        publicationDao.savePublication(
-                "Состоялся софт-запуск Star Wars",
-                "На Android и iOS пробно запущена новая мобильная " +
-                        "игра по известной вселенной «Звездных войн». ",
-                1L,
-                localDate1);
-        List<Publication> result2 = publicationDao.findAllOrderDateDesc();
-        System.out.println(result2);
-        assertNotNull(result2);
-        int publication = publicationDao.countById(12L);
-        System.out.println("------------------"+publication);
+        Game game = gameDao.findOne(1L);
+        CommonBaseGame commonBaseGame = new CommonBaseGame();
+        commonBaseGame.setGame(game);
+        commonBaseGame.setText("ggggggggggggggggggggggggg");
+        List<CommonBaseGame> result = commonBaseGameDao.findAll();
+        assertNotNull(result);
     }
 }

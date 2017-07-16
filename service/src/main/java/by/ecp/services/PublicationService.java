@@ -17,4 +17,8 @@ public interface PublicationService {
             LocalDate datePublication);
 
     List<Publication> findAllOrderDateDesc();
+
+    List<Publication> findPageById(Long id, int page, int sizePage);
+
+    int countByPublicationId(Long id);
 }

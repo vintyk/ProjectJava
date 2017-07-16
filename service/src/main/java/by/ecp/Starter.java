@@ -1,11 +1,13 @@
 package by.ecp;
 
+import by.ecp.db.PublicationDao;
 import by.ecp.entity.*;
 import by.ecp.services.*;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.io.*;
 import java.nio.file.Path;
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -18,18 +20,20 @@ public class Starter {
       public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(RootConfig.class);
 
-
-          File myFile = new File("log4j.log");
-          try{
-              PrintWriter writer =
-                      new PrintWriter(new BufferedWriter(new FileWriter(myFile, true)));
-              writer.println("Вызываем в сервисе ---");
-              writer.println("======================");
-              writer.flush();
-              writer.close();
-          } catch (IOException e) {
-              e.printStackTrace();
-          }
+          PublicationDao publicationDao = context.getBean(PublicationDao.class);
+          int num = publicationDao.countById(12L);
+          System.out.println(num);
+//          File myFile = new File("log4j.log");
+//          try{
+//              PrintWriter writer =
+//                      new PrintWriter(new BufferedWriter(new FileWriter(myFile, true)));
+//              writer.println("Вызываем в сервисе ---");
+//              writer.println("======================");
+//              writer.flush();
+//              writer.close();
+//          } catch (IOException e) {
+//              e.printStackTrace();
+//          }
 
 
 //          GameService gameService = context.getBean(GameService.class);

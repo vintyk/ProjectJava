@@ -1,6 +1,7 @@
 package by.ecp.db;
 
 import by.ecp.common.BaseDao;
+import by.ecp.entity.CommonBaseGame;
 import by.ecp.entity.Publication;
 import java.time.LocalDate;
 import java.util.List;
@@ -17,4 +18,8 @@ public interface PublicationDao extends BaseDao<Publication> {
             LocalDate datePublication);
 
     List<Publication> findAllOrderDateDesc();
+
+    int countById(Long id);
+
+    List<Publication> findPageById(Long id, int page, int sizePage);
 }

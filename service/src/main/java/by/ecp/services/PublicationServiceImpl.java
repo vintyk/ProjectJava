@@ -42,4 +42,15 @@ public class PublicationServiceImpl implements PublicationService {
     public List<Publication> findAllOrderDateDesc() {
         return publicationDao.findAllOrderDateDesc();
     }
+
+    @Override
+    public List<Publication> findPageById(Long id, int page, int sizePage) {
+        return publicationDao.findPageById(id, page, sizePage);
+    }
+
+    @Override
+    public int countByPublicationId(Long id) {
+        return publicationDao.countById(id);
+    }
+
 }
