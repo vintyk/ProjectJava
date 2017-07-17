@@ -1,5 +1,6 @@
 package by.ecp.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -10,6 +11,7 @@ import lombok.ToString;
 @Data
 @NoArgsConstructor
 @ToString
+@AllArgsConstructor
 public class CommonBaseGameDto {
     private String text;
     private Long gameId;

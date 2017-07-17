@@ -1,5 +1,6 @@
 package by.ecp.services;
 
+import by.ecp.dto.CommonBaseGameDto;
 import by.ecp.entity.CommonBaseGame;
 
 import java.util.List;
@@ -12,5 +13,5 @@ public interface CommonBaseGameService {
     void saveCommonBaseGame(
             String text,
             Long gameId);
-    List<CommonBaseGame> findAllList();
+    List<CommonBaseGameDto> findAllList();
 }

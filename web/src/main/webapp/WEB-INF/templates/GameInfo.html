@@ -7,7 +7,7 @@
     <title>LOGIN</title>
     <style type="text/css">
         div {
-            background: url(resources/pic/backgrnd3.jpg)
+            background: url(/resources/pic/backgrnd3.jpg)
         }
     </style>
     <link rel="stylesheet" href="resources/css/foundation.css">
@@ -42,7 +42,7 @@
 <div class="row">
     <div class="large-12 columns">
         <H2>Описание игр.</H2>
-        <form th:action="@{/gameInfo}" method="post" th:object="${CommonBaseGameDto}">
+        <form th:action="@{/gameInfo}" method="post" th:object="${commonBaseGameDto}">
             <select th:field="*{gameId}">
                 <option th:each="games : ${games}"
                         th:value="${games.id}"
@@ -57,10 +57,10 @@
 
         <h5>Описания Игр</h5>
 
-            <ul th:each="common_games : ${common_games}">
+            <ul th:each="commonGame : ${commonGames}">
                 <div class="callout success">
-                    <li><h5><a href="/gameInfo" th:text="${common_games.gameId}">Создать вакансию</a></h5>
-                        <p th:text="${common_games.text}"></p>
+                    <li><h5><a href="/gameInfo" th:text="${commonGame.gameId}">Создать вакансию</a></h5>
+                        <p th:text="${commonGame.text}"></p>
                     </li>
                 </div>
             </ul>

@@ -34,11 +34,11 @@ public class GameInfoController {
         return gameService.findAll();
     }
 
-    @ModelAttribute("common_games")
-    public List<CommonBaseGame> common_games(){
+    @ModelAttribute("commonGames")
+    public List<CommonBaseGameDto> common_games(){
         return commonBaseGameService.findAllList();
     }
-    @ModelAttribute("CommonBaseGameDto")
+    @ModelAttribute("commonBaseGameDto")
     public CommonBaseGameDto commonBaseGameDto() {
         return new CommonBaseGameDto();
     }

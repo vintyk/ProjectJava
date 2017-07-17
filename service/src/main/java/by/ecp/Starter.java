@@ -1,6 +1,7 @@
 package by.ecp;
 
 import by.ecp.db.PublicationDao;
+import by.ecp.dto.CommonBaseGameDto;
 import by.ecp.entity.*;
 import by.ecp.services.*;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -23,14 +24,14 @@ public class Starter {
         CommonBaseGameService commonBaseGameService = context.getBean(CommonBaseGameService.class);
 //          List<CommonBaseGame> commonBaseGameList = commonBaseGameService.findAll();
 //                    commonBaseGameList.forEach(System.out::println);
-          List<CommonBaseGame> result = commonBaseGameService.findAllList();
+          List<CommonBaseGameDto> result = commonBaseGameService.findAllList();
           System.out.println(result);
 
 
-          UserService userService = context.getBean(UserService.class);
-          List<SystemUser> users = userService.findAll();
-          users.forEach(System.out::println);
-          System.out.println(userService.findById(1L));
+//          UserService userService = context.getBean(UserService.class);
+//          List<SystemUser> users = userService.findAll();
+//          users.forEach(System.out::println);
+//          System.out.println(userService.findById(1L));
 
                     //          File myFile = new File("log4j.log");
 //          try{

@@ -1,5 +1,6 @@
 package by.ecp.tests;
 
+import by.ecp.dto.CommonBaseGameDto;
 import by.ecp.dto.GameDto;
 import by.ecp.dto.PublicationDto;
 import by.ecp.entity.*;
@@ -71,7 +72,7 @@ public class CommonBaseGameServiceTest extends BaseTest {
         );
         String text = "ggggggg";
         commonBaseGameService.saveCommonBaseGame(text, 1L);
-        List<CommonBaseGame> result = commonBaseGameService.findAllList();
+        List<CommonBaseGameDto> result = commonBaseGameService.findAllList();
         System.out.println(result);
         assertEquals(result.size(), 1);
     }

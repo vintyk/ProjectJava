@@ -1,12 +1,14 @@
 package by.ecp.services;
 
 import by.ecp.db.CommonBaseGameDao;
+import by.ecp.dto.CommonBaseGameDto;
 import by.ecp.entity.CommonBaseGame;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by User on 17.07.2017.
@@ -27,7 +29,11 @@ public class CommonBaseGameServiceImpl implements CommonBaseGameService{
     }
 
     @Override
-    public List<CommonBaseGame> findAllList() {
-        return commonBaseGameDao.findAllList();
+    public List<CommonBaseGameDto> findAllList() {
+        return commonBaseGameDao
+                .findAllList()
+                .stream()
+                .map(game -> new CommonBaseGameDto(game.getText(), game.getId()))
+                .collect(Collectors.toList());
     }
 }
