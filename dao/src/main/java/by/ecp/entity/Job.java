@@ -53,9 +53,4 @@ public class Job extends BaseEntity{
     @Column(name = "comment")
     private String comment;
 
-    @Column(name = "version")
-    @Version
-    @Getter
-    @Setter
-    private long version;
-}
+   }

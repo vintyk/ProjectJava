@@ -72,7 +72,7 @@ public class TestConfig {
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactoryBean = new LocalSessionFactoryBean();
         sessionFactoryBean.setDataSource(dataSource());
-        sessionFactoryBean.setPackagesToScan("by.ecp");
+        sessionFactoryBean.setPackagesToScan("com.itacademy.entity");
         sessionFactoryBean.setHibernateProperties(hibernateProperties());
         return sessionFactoryBean;
     }

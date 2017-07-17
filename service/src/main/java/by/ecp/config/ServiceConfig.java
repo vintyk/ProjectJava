@@ -17,4 +17,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Import(value ={RootConfig.class, AopConfig.class})
 @EnableTransactionManagement
 public class ServiceConfig{
+    @Bean
+    public HibernateTransactionManager transactionManager(SessionFactory sessionFactory) {
+        HibernateTransactionManager transactionManager = new HibernateTransactionManager();
+        transactionManager.setSessionFactory(sessionFactory);
+        return transactionManager;
+    }
 }

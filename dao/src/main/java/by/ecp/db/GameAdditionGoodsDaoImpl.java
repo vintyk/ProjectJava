@@ -15,7 +15,7 @@ import org.springframework.stereotype.Repository;
 public class GameAdditionGoodsDaoImpl extends BaseDaoImpl<GameAdditionGoods> implements GameAdditionGoodsDao{
 
     @Autowired
-    GameAdditionGoodsDao gameAdditionGoodsDao;
+    private GameAdditionGoodsDao gameAdditionGoodsDao;
 
     @Override
     public GameAdditionGoods findOne(GameAdditionGoods gameAdditionGoods) {
