@@ -10,4 +10,7 @@ import java.util.List;
  */
 public interface CommonBaseGameDao extends BaseDao<CommonBaseGame> {
 
+    void saveCommonBaseGame(String text, Long gameId);
+
+    List<CommonBaseGame> listCommonBaseGame();
 }

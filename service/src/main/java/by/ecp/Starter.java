@@ -20,9 +20,10 @@ public class Starter {
       public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(RootConfig.class);
 
-          PublicationDao publicationDao = context.getBean(PublicationDao.class);
-          int num = publicationDao.countById(12L);
-          System.out.println(num);
+        CommonBaseGameService commonBaseGameService = context.getBean(CommonBaseGameService.class);
+          commonBaseGameService.saveCommonBaseGame("gggggggggggggg", 9L);
+          System.out.println(commonBaseGameService.listCommonBaseGame());
+
 //          File myFile = new File("log4j.log");
 //          try{
 //              PrintWriter writer =

@@ -36,8 +36,6 @@ public class CommonGameDaoTest extends BaseTest{
     private StageDao stageDao;
     @Autowired
     private PlatformDao platformDao;
-    @Autowired
-    private BaseDao<CommonBaseGame> dao = new CommonBaseGameDaoImpl();
 
     @Test
     public void saveByExistPlatformsTest() {
@@ -75,11 +73,11 @@ public class CommonGameDaoTest extends BaseTest{
                 1L,
                 1L,
                 platformLongs);
-        Game game = gameDao.findOne(1L);
-        CommonBaseGame commonBaseGame = new CommonBaseGame();
-        commonBaseGame.setGame(game);
-        commonBaseGame.setText("ggggggggggggggggggggggggg");
-        List<CommonBaseGame> result = commonBaseGameDao.findAll();
+
+        String text = "hhhhhhhhhhhh";
+        commonBaseGameDao.saveCommonBaseGame(text, 1L);
+        List<CommonBaseGame> result = commonBaseGameDao.listCommonBaseGame();
+        System.out.println("-----------------------------------"+result);
         assertNotNull(result);
     }
 }

@@ -21,14 +21,20 @@
 <nav class="hover-underline-menu" data-menu-underline-from-center>
     <ul class="dropdown menu" data-dropdown-menu>
         <li><a href="/GameProject">Новости</a></li>
-        <li><a href="/GameView">Игры</a></li>
+        <li>
+            <a href="/GameView">Игры</a>
+            <ul class="menu vertical">
+                <li><a href="/GameView">Игры - базовая информация</a></li>
+                <li><a href="/gameInfo">Игры - общее описание</a></li>
+            </ul>
+        </li>
         <li><a href="/publication_view">Публикации</a></li>
         <li>
             <a href="/adminTool">Администратор</a>
             <ul class="menu vertical">
                 <li><a href="/adminTool">Создать вакансию</a></li>
                 <li><a href="/adminToolCreateGame">Создать Игру</a></li>
-                <li><a href="/adminToolCreatePublication">Создать публикацию</a></li>
+                <li><a href="adminToolCreatePublication">Создать публикацию</a></li>
             </ul>
         </li>
         <li><a href="/logout">Выход</a></li>
