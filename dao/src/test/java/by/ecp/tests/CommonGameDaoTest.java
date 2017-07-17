@@ -20,8 +20,7 @@ import static org.junit.Assert.assertThat;
  */
 
 public class CommonGameDaoTest extends BaseTest{
-    @Autowired
-    private CommonBaseGameDao commonBaseGameDao;
+
     @Autowired
     private GameDao gameDao;
     @Autowired
@@ -75,9 +74,9 @@ public class CommonGameDaoTest extends BaseTest{
                 platformLongs);
 
         String text = "hhhhhhhhhhhh";
-        commonBaseGameDao.saveCommonBaseGame(text, 1L);
-        List<CommonBaseGame> result = commonBaseGameDao.listCommonBaseGame();
-        System.out.println("-----------------------------------"+result);
-        assertNotNull(result);
+//        commonBaseGameDao.saveCommonBaseGame(text, 1L);
+//        List<CommonBaseGame> result = commonBaseGameDao.listCommonBaseGame();
+//        System.out.println("-----------------------------------"+result);
+//        assertNotNull(result);
     }
 }

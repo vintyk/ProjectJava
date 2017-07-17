@@ -20,9 +20,6 @@ public class Starter {
       public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(RootConfig.class);
 
-        CommonBaseGameService commonBaseGameService = context.getBean(CommonBaseGameService.class);
-          commonBaseGameService.saveCommonBaseGame("gggggggggggggg", 9L);
-          System.out.println(commonBaseGameService.listCommonBaseGame());
 
 //          File myFile = new File("log4j.log");
 //          try{
