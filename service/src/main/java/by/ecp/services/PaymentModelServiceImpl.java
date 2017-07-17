@@ -23,19 +23,16 @@ public class PaymentModelServiceImpl implements PaymentModelService {
     }
 
     @Override
-    @Loggable
     public List<PaymentModel> findAll() {
         return paymentModelDao.findAll();
     }
 
     @Override
-    @LoggableOne
     public PaymentModel findOne(Long id) {
         return paymentModelDao.findOne(id);
     }
 
     @Override
-    @Loggable
     public void save(PaymentModel paymentModel) {
         paymentModelDao.save(paymentModel);
     }

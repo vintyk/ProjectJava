@@ -21,7 +21,7 @@ public class StageServiceTest extends BaseTest{
     @Test
     public void findAll(){
         Stage stage = new Stage();
-        stage.setName("a");
+        stage.setName("ggga");
         stageService.save(stage);
         List<Stage> stageList = stageService.findAll();
         assertThat(stageList, notNullValue());
