@@ -1,9 +1,11 @@
 package by.ecp.controller;
 
 import by.ecp.dto.CommonBaseGameDto;
-import by.ecp.dto.JobVacancyDto;
 import by.ecp.entity.CommonBaseGame;
 //import by.ecp.services.CommonBaseGameService;
+import by.ecp.entity.Game;
+import by.ecp.services.CommonBaseGameService;
+import by.ecp.services.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,21 +21,27 @@ import java.util.List;
 @Controller
 public class GameInfoController {
 
-//    private final CommonBaseGameService commonBaseGameService;
+    private final CommonBaseGameService commonBaseGameService;
+    private final GameService gameService;
 
-//    @Autowired
-//    public GameInfoController(CommonBaseGameService commonBaseGameService) {
-//        this.commonBaseGameService = commonBaseGameService;
-//    }
+    @Autowired
+    public GameInfoController(CommonBaseGameService commonBaseGameService, GameService gameService) {
+        this.commonBaseGameService = commonBaseGameService;
+        this.gameService = gameService;
+    }
+    @ModelAttribute("games")
+    public List<Game> games(){
+        return gameService.findAll();
+    }
 
-//    @ModelAttribute("CommonBaseGameDto")
-//    public CommonBaseGameDto commonBaseGameDto() {
-//        return new CommonBaseGameDto();
-//    }
-//    @ModelAttribute("games_info")
-//    public List<CommonBaseGame> games_info(){
-//        return commonBaseGameService.findAll();
-//    }
+    @ModelAttribute("common_games")
+    public List<CommonBaseGame> common_games(){
+        return commonBaseGameService.findAllList();
+    }
+    @ModelAttribute("CommonBaseGameDto")
+    public CommonBaseGameDto commonBaseGameDto() {
+        return new CommonBaseGameDto();
+    }
 
     @GetMapping(path = "/gameInfo")
     public String showGameViewForm() {
@@ -41,7 +49,8 @@ public class GameInfoController {
     }
 
     @PostMapping(path = "/gameInfo")
-    public String tempGameDto(Model model){
+    public String tempGameDto(CommonBaseGameDto commonBaseGameDto, Model model){
+
         return "/GameInfo";
     }
 }

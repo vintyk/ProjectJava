@@ -69,7 +69,7 @@ public class CommonBaseGameDaoTest extends BaseTest {
                 "dddddd",
                 1L
         );
-        List<CommonBaseGame> result = commonBaseGameDao.findAll();
+        List<CommonBaseGame> result = commonBaseGameDao.findAllList();
         Assert.assertEquals(result.size(), 1);
 
     }

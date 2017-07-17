@@ -36,20 +36,34 @@
         <li><a href="/logout">Выход</a></li>
     </ul>
 </nav>
+<br>
+
+<br>
 <div class="row">
     <div class="large-12 columns">
+        <H2>Описание игр.</H2>
         <form th:action="@{/gameInfo}" method="post" th:object="${CommonBaseGameDto}">
             <select th:field="*{gameId}">
-                <option th:each="games_info : ${games_info}"
-                        th:value="${games_info.id}"
-                        th:text="'Игра: '+${games_info.game}">
+                <option th:each="games : ${games}"
+                        th:value="${games.id}"
+                        th:text="'Игра: '+${games.nameGame}">
                 </option>
             </select>
 
-                    <label> Описание </label>
-                    <textarea placeholder="Коротко об особенностях..." th:field="*{test}"></textarea>
-                <button type="submit" class="expanded button">Сохранить</button>
+                    <label> Список Игр </label>
+                    <textarea placeholder="Коротко об особенностях..." th:field="*{text}"></textarea>
+                <button type="submit" class="expanded button">Сохранить изменения</button>
         </form>
+
+        <h5>Описания Игр</h5>
+
+            <ul th:each="common_games : ${common_games}">
+                <div class="callout success">
+                    <li><h5><a href="/gameInfo" th:text="${common_games.gameId}">Создать вакансию</a></h5>
+                        <p th:text="${common_games.text}"></p>
+                    </li>
+                </div>
+            </ul>
     </div>
 </div>
 <script src="/resources/js/vendor/jquery.js"></script>

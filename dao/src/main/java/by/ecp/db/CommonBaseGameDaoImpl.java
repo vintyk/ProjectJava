@@ -3,8 +3,12 @@ package by.ecp.db;
 import by.ecp.common.BaseDaoImpl;
 import by.ecp.entity.CommonBaseGame;
 import by.ecp.entity.Game;
+import by.ecp.entity.QCommonBaseGame;
+import com.querydsl.jpa.impl.JPAQuery;
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * Created by User on 17.07.2017.
@@ -22,5 +26,16 @@ public class CommonBaseGameDaoImpl extends BaseDaoImpl<CommonBaseGame> implement
         commonBaseGame.setText(text);
         commonBaseGame.setGame(game);
         session.save(commonBaseGame);
+    }
+
+    @Override
+    public List<CommonBaseGame> findAllList() {
+        Session session = getSessionFactory().getCurrentSession();
+        QCommonBaseGame commonBaseGame = new QCommonBaseGame("myCommBaseGame");
+        JPAQuery<CommonBaseGame> query = new JPAQuery<>(session);
+        query
+                .select(commonBaseGame)
+                .from(commonBaseGame);
+        return query.fetchResults().getResults();
     }
 }

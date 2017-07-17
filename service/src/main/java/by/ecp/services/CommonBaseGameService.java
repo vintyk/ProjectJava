@@ -12,5 +12,5 @@ public interface CommonBaseGameService {
     void saveCommonBaseGame(
             String text,
             Long gameId);
-    List<CommonBaseGame> findAll();
+    List<CommonBaseGame> findAllList();
 }

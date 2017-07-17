@@ -20,8 +20,19 @@ public class Starter {
       public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(RootConfig.class);
 
+        CommonBaseGameService commonBaseGameService = context.getBean(CommonBaseGameService.class);
+//          List<CommonBaseGame> commonBaseGameList = commonBaseGameService.findAll();
+//                    commonBaseGameList.forEach(System.out::println);
+          List<CommonBaseGame> result = commonBaseGameService.findAllList();
+          System.out.println(result);
 
-//          File myFile = new File("log4j.log");
+
+          UserService userService = context.getBean(UserService.class);
+          List<SystemUser> users = userService.findAll();
+          users.forEach(System.out::println);
+          System.out.println(userService.findById(1L));
+
+                    //          File myFile = new File("log4j.log");
 //          try{
 //              PrintWriter writer =
 //                      new PrintWriter(new BufferedWriter(new FileWriter(myFile, true)));
@@ -81,10 +92,7 @@ public class Starter {
 //        List<Country> countryList = countryService.findAll();
 //        System.out.println(countryList);
 
-//        UserService userService = context.getBean(UserService.class);
-//        List<SystemUser> users = userService.findAll();
-//        users.forEach(System.out::println);
-//        System.out.println(userService.findById(1L));
+
 
 //        Address address = new Address();
 //        address.setCountry("РБ");
