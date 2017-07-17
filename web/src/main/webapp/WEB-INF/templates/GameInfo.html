@@ -1,0 +1,60 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <style type="text/css">
+        div {
+            background: url(resources/pic/backgrnd3.jpg)
+        }
+    </style>
+    <link rel="stylesheet" href="resources/css/foundation.css">
+    <link rel="stylesheet" href="resources/css/app.css">
+</head>
+<body>
+<nav class="hover-underline-menu" data-menu-underline-from-center>
+    <ul class="dropdown menu" data-dropdown-menu>
+        <li><a href="/GameProject">Новости</a></li>
+        <li>
+            <a href="/GameView">Игры</a>
+            <ul class="menu vertical">
+                <li><a href="/GameView">Игры - базовая информация</a></li>
+                <li><a href="/gameInfo">Игры - общее описание</a></li>
+            </ul>
+        </li>
+        <li><a href="/publication_view">Публикации</a></li>
+        <li>
+            <a href="/adminTool">Администратор</a>
+            <ul class="menu vertical">
+                <li><a href="/adminTool">Создать вакансию</a></li>
+                <li><a href="/adminToolCreateGame">Создать Игру</a></li>
+                <li><a href="adminToolCreatePublication">Создать публикацию</a></li>
+            </ul>
+        </li>
+        <li><a href="/logout">Выход</a></li>
+    </ul>
+</nav>
+<div class="row">
+    <div class="large-12 columns">
+        <form th:action="@{/gameInfo}" method="post" th:object="${CommonBaseGameDto}">
+            <select th:field="*{gameId}">
+                <option th:each="games_info : ${games_info}"
+                        th:value="${games_info.id}"
+                        th:text="'Игра: '+${games_info.game}">
+                </option>
+            </select>
+
+                    <label> Описание </label>
+                    <textarea placeholder="Коротко об особенностях..." th:field="*{test}"></textarea>
+                <button type="submit" class="expanded button">Сохранить</button>
+        </form>
+    </div>
+</div>
+<script src="/resources/js/vendor/jquery.js"></script>
+<script src="/resources/js/vendor/what-input.js"></script>
+<script src="/resources/js/vendor/foundation.js"></script>
+<script src="/resources/js/app.js"></script>
+</body>
+</html>
