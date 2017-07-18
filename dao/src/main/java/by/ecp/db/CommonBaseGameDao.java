@@ -13,4 +13,6 @@ public interface CommonBaseGameDao extends BaseDao<CommonBaseGame>{
     void saveCommonBaseGame (String text, Long gameId);
 
     List<CommonBaseGame> findAllList();
+
+    CommonBaseGame findAllTextByGameId(Long gameId);
 }

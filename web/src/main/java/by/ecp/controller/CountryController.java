@@ -1,14 +1,11 @@
 package by.ecp.controller;
 
 import by.ecp.entity.Country;
-import by.ecp.services.CompanyService;
 import by.ecp.services.CountryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
@@ -40,13 +37,13 @@ public class CountryController {
     @GetMapping(path = "/country")
     public  String showCountryForm()
     {
-        return "country";
+        return "VerError";
     }
 
     @PostMapping(path = "/country")
     public String saveCountry(Country country){
         countryService.save(country);
-        return "/country";
+        return "VerError";
     }
 
 //    @GetMapping(path = "/country/{countryId}")

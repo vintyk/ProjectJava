@@ -38,4 +38,18 @@ public class CommonBaseGameDaoImpl extends BaseDaoImpl<CommonBaseGame> implement
                 .from(commonBaseGame);
         return query.fetchResults().getResults();
     }
+    @Override
+    public CommonBaseGame findAllTextByGameId(Long gameId){
+        QCommonBaseGame commonBaseGame = new QCommonBaseGame("myQComm");
+        JPAQuery<CommonBaseGame> query = new JPAQuery<>(getCurrentSession());
+        query
+                .select(commonBaseGame)
+                .from(commonBaseGame)
+                .join(commonBaseGame.game)
+                .where(commonBaseGame.game.id.eq(gameId))
+                .limit(1)
+                .orderBy(commonBaseGame.game.id.desc());
+        return query.fetchOne();
+    }
+
 }

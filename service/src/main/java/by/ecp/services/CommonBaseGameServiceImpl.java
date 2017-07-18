@@ -1,8 +1,10 @@
 package by.ecp.services;
 
 import by.ecp.db.CommonBaseGameDao;
+import by.ecp.db.GameDao;
 import by.ecp.dto.CommonBaseGameDto;
 import by.ecp.entity.CommonBaseGame;
+import by.ecp.entity.Game;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,9 +20,11 @@ import java.util.stream.Collectors;
 public class CommonBaseGameServiceImpl implements CommonBaseGameService{
 
     private  final CommonBaseGameDao commonBaseGameDao;
+    private  final GameDao gameDao;
     @Autowired
-    public CommonBaseGameServiceImpl(CommonBaseGameDao commonBaseGameDao) {
+    public CommonBaseGameServiceImpl(CommonBaseGameDao commonBaseGameDao, GameDao gameDao) {
         this.commonBaseGameDao = commonBaseGameDao;
+        this.gameDao = gameDao;
     }
 
     @Override
@@ -33,7 +37,28 @@ public class CommonBaseGameServiceImpl implements CommonBaseGameService{
         return commonBaseGameDao
                 .findAllList()
                 .stream()
-                .map(game -> new CommonBaseGameDto(game.getText(), game.getId()))
+                .map(game -> new CommonBaseGameDto(game.getText(), game.getId(), game.getVersion()))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public CommonBaseGameDto findOneTextByGame(Long id){
+        CommonBaseGame commonBaseGame = commonBaseGameDao.findAllTextByGameId(id);
+        CommonBaseGameDto commonBaseGameDto = new CommonBaseGameDto();
+        commonBaseGameDto.setText(commonBaseGame.getText());
+        commonBaseGameDto.setGameId(commonBaseGame.getId());
+        commonBaseGameDto.setVersion(commonBaseGame.getVersion());
+        return commonBaseGameDto;
+    }
+
+    @Override
+    public void update(CommonBaseGameDto commonBaseGameDto) {
+        CommonBaseGame commonBaseGame = new CommonBaseGame();
+        Game game = gameDao.findOne(commonBaseGameDto.getGameId());
+
+        commonBaseGame.setText(commonBaseGameDto.getText());
+        commonBaseGame.setGame(game);
+//        commonBaseGame.setVersion(commonBaseGameDto.getVersion());
+        commonBaseGameDao.update(commonBaseGame);
     }
 }

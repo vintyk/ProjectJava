@@ -1,5 +1,6 @@
 <!doctype html>
-<html class="no-js" lang="en" dir="ltr" xmlns:th="http://www.w3.org/1999/xhtml">
+<html class="no-js" lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+<!--<html class="no-js" lang="en" dir="ltr" xmlns:th="http://www.w3.org/1999/xhtml">-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -10,8 +11,8 @@
             background: url(/resources/pic/backgrnd3.jpg)
         }
     </style>
-    <link rel="stylesheet" href="resources/css/foundation.css">
-    <link rel="stylesheet" href="resources/css/app.css">
+    <link rel="stylesheet" href="/resources/css/foundation.css">
+    <link rel="stylesheet" href="/resources/css/app.css">
 </head>
 <body>
 <nav class="hover-underline-menu" data-menu-underline-from-center>
@@ -42,11 +43,13 @@
 <div class="row">
     <div class="large-12 columns">
         <H2>Описание игр.</H2>
-        <form th:action="@{/gameInfo}" method="post" th:object="${commonBaseGameDto}">
+
+
+        <form th:action="@{/gameInfo/{myGameId}(myGameId=${commonBaseGameDto.getGameId()})}" method="post" th:object="${commonBaseGameDto}">
             <select th:field="*{gameId}">
-                <option th:each="games : ${games}"
-                        th:value="${games.id}"
-                        th:text="'Игра: '+${games.nameGame}">
+                <option th:each="game : ${games}"
+                        th:value="${game.getId()}"
+                        th:text="'Игра: '+${game.nameGame}">
                 </option>
             </select>
 

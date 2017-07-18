@@ -71,7 +71,8 @@ public class CommonBaseGameDaoTest extends BaseTest {
         );
         List<CommonBaseGame> result = commonBaseGameDao.findAllList();
         Assert.assertEquals(result.size(), 1);
-
+        CommonBaseGame result2 = commonBaseGameDao.findAllTextByGameId(1L);
+        System.out.println(result2);
     }
 
 }

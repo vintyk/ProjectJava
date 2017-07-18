@@ -15,4 +15,5 @@ import lombok.ToString;
 public class CommonBaseGameDto {
     private String text;
     private Long gameId;
+    private Long version;
 }

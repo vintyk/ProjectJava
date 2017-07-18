@@ -13,5 +13,10 @@ public interface CommonBaseGameService {
     void saveCommonBaseGame(
             String text,
             Long gameId);
+
     List<CommonBaseGameDto> findAllList();
+
+    CommonBaseGameDto findOneTextByGame(Long id);
+
+    void update(CommonBaseGameDto commonBaseGameDto);
 }
