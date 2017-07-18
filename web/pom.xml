@@ -6,7 +6,7 @@
   <parent>
     <groupId>by.ecp</groupId>
     <artifactId>projectGame</artifactId>
-    <version>${project.version}</version>
+    <version>1.0-SNAPSHOT</version>
   </parent>
 
   <artifactId>web</artifactId>
