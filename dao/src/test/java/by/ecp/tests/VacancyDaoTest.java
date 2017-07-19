@@ -27,17 +27,15 @@ public class VacancyDaoTest extends BaseTest{
 
     @Test
     public void testFindByName(){
-        Company company = new Company();
-        company.setName("My-new-Company");
-        companyDao.save(company);
-
-        Vacancy vacancy = new Vacancy();
-        vacancy.setNameVacancy("vac");
-        vacancy.setCompany(company);
-        vacancyDao.save(vacancy);
-
-        Vacancy result = vacancyDao.findByName("vac");
+        Company company2 = new Company();
+        company2.setName("MyCompany");
+        companyDao.save(company2);
+        vacancyDao.saveVacancy("vac", 1L);
+        Vacancy result = vacancyDao.findOne(1L);
         System.out.println(result);
-        assertEquals(vacancy.getNameVacancy(), "vac");
+        assertEquals(result.getNameVacancy(), "vac");
+        Vacancy result2 = vacancyDao.findByName("vac");
+        assertEquals(result.getNameVacancy(), "vac");
     }
+
 }

@@ -49,13 +49,10 @@ public class SystemUserDaoTest extends BaseTest {
     }
 
     @Test
-    public void saveSystemUserTest() {
-        Privilege privilege = new Privilege();
-//        SystemUser systemUser = new SystemUser();
+    public void saveUser() {
         Address address = new Address();
         address.setCity("Minsk");
         address.setCountry("RB");
-
         Privilege privilege1 = new Privilege();
         privilege1.setNamePrivilege("Admin");
         privilegeDao.save(privilege1);
@@ -65,7 +62,6 @@ public class SystemUserDaoTest extends BaseTest {
         Set<Long> privilegeLongs = new HashSet<>();
         privilegeLongs.add(1L);
         privilegeLongs.add(2L);
-
         systemUserDao.saveUser(
                 "MeeMo",
                 "Loo_Lee",
