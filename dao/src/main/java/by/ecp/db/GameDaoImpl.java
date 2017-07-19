@@ -38,22 +38,16 @@ public class GameDaoImpl extends BaseDaoImpl<Game> implements GameDao{
                                            Set<Long> platformsIDs
                                            ){
         Session session = getSessionFactory().getCurrentSession();
-
         Company company = new Company();
         company.setId(companyId);
-
         Genre genre = new Genre();
         genre.setId(genreId);
-
         PaymentModel paymentModel = new PaymentModel();
         paymentModel.setId(paymentModelId);
-
         Setting setting = new Setting();
         setting.setId(settingId);
-
         Stage stage = new Stage();
         stage.setId(stageId);
-
         Set<Platform> platformSet = new HashSet<>();
         Iterator iter = platformsIDs.iterator();
         while (iter.hasNext()){

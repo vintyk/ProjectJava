@@ -8,7 +8,7 @@ import by.ecp.entity.Vacancy;
  */
 public interface VacancyDao extends BaseDao<Vacancy> {
 
-    void saveVacancy(String nameVacancy, Long companiesId);
+    void saveVacancy(String nameVacancy, Long companyId);
 
     Vacancy findByName(String name);
 }

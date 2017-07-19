@@ -15,12 +15,10 @@ import org.springframework.stereotype.Repository;
 public class VacancyDaoImpl extends BaseDaoImpl<Vacancy> implements VacancyDao{
 
     @Override
-    public void saveVacancy(String nameVacancy, Long companiesId) {
+    public void saveVacancy(String nameVacancy, Long companyId) {
         Session session = getSessionFactory().getCurrentSession();
-
         Company company = new Company();
-        company.setId(companiesId);
-
+        company.setId(companyId);
         Vacancy vacancy = new Vacancy();
         vacancy.setNameVacancy(nameVacancy);
         vacancy.setCompany(company);
