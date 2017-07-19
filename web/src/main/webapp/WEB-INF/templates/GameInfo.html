@@ -44,8 +44,7 @@
     <div class="large-12 columns">
         <H2>Описание игр.</H2>
 
-
-        <form th:action="@{/gameInfo/{myGameId}(myGameId=${commonBaseGameDto.getGameId()})}" method="post" th:object="${commonBaseGameDto}">
+        <form th:action="@{/gameInfo/{myGameId}/(myGameId=${commonBaseGameDto.getGameId()})}" method="post" th:object="${commonBaseGameDto}">
             <select th:field="*{gameId}">
                 <option th:each="game : ${games}"
                         th:value="${game.getId()}"
