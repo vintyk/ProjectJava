@@ -1,10 +1,8 @@
 package by.ecp.tests;
 
 import by.ecp.dto.GameDto;
-import by.ecp.dto.SystemUserDto;
 import by.ecp.entity.*;
 import by.ecp.services.*;
-import org.hibernate.collection.internal.PersistentSet;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 

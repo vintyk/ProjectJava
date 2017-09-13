@@ -1,8 +1,6 @@
 package by.ecp.tests;
 
-import by.ecp.entity.Company;
 import by.ecp.entity.Country;
-import by.ecp.services.CompanyService;
 import by.ecp.services.CountryService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;

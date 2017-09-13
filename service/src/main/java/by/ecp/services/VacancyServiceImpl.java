@@ -1,7 +1,6 @@
 package by.ecp.services;
 
 import by.ecp.db.VacancyDao;
-import by.ecp.entity.Job;
 import by.ecp.entity.Vacancy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

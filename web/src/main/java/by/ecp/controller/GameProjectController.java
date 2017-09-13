@@ -1,16 +1,17 @@
 package by.ecp.controller;
 
 import by.ecp.dto.JobVacancyDto;
-import by.ecp.entity.*;
 import by.ecp.services.JobService;
 import by.ecp.services.VacancyService;
+import by.ecp.entity.English;
+import by.ecp.entity.Gender;
+import by.ecp.entity.Job;
+import by.ecp.entity.Vacancy;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.Arrays;

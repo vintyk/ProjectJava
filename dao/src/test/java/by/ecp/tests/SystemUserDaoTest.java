@@ -2,7 +2,10 @@ package by.ecp.tests;
 
 import by.ecp.db.PrivilegeDao;
 import by.ecp.db.SystemUserDao;
-import by.ecp.entity.*;
+import by.ecp.entity.Address;
+import by.ecp.entity.Gender;
+import by.ecp.entity.Privilege;
+import by.ecp.entity.SystemUser;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 

@@ -1,6 +1,5 @@
 package by.ecp.db;
 
-import by.ecp.common.BaseDao;
 import by.ecp.common.BaseDaoImpl;
 import by.ecp.entity.Country;
 import org.springframework.stereotype.Repository;

@@ -1,7 +1,6 @@
 package by.ecp.tests;
 
 import by.ecp.common.BaseDao;
-import by.ecp.common.BaseDaoImpl;
 import by.ecp.db.PaymentModelDaoImpl;
 import by.ecp.entity.PaymentModel;
 import org.springframework.beans.factory.annotation.Autowired;

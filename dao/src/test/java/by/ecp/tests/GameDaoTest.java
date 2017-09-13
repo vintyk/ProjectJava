@@ -1,16 +1,10 @@
 package by.ecp.tests;
 
-import by.ecp.TestConfig;
-import by.ecp.common.BaseDaoImpl;
 import by.ecp.db.*;
 import by.ecp.entity.*;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
 
-import javax.transaction.Transactional;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;

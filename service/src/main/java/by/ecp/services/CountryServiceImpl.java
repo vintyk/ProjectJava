@@ -2,7 +2,6 @@ package by.ecp.services;
 
 import by.ecp.db.CountryDao;
 import by.ecp.entity.Country;
-import jdk.nashorn.internal.runtime.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

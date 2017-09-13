@@ -1,8 +1,6 @@
 package by.ecp.tests;
 
-import by.ecp.entity.Company;
 import by.ecp.entity.Genre;
-import by.ecp.services.CompanyService;
 import by.ecp.services.GenreService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;

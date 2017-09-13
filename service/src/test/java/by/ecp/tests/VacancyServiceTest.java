@@ -1,11 +1,11 @@
 package by.ecp.tests;
 
-import by.ecp.dto.JobVacancyDto;
+
 import by.ecp.dto.VacancyDto;
-import by.ecp.entity.*;
 import by.ecp.services.CompanyService;
-import by.ecp.services.JobService;
 import by.ecp.services.VacancyService;
+import by.ecp.entity.Company;
+import by.ecp.entity.Vacancy;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 

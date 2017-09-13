@@ -1,6 +1,5 @@
 package by.ecp.controller;
 
-import by.ecp.entity.Game;
 import by.ecp.entity.Publication;
 import by.ecp.services.PublicationService;
 import org.springframework.stereotype.Controller;

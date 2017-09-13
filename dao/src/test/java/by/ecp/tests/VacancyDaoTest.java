@@ -1,15 +1,12 @@
 package by.ecp.tests;
 
 
-import by.ecp.common.BaseDaoImpl;
 import by.ecp.db.CompanyDao;
 import by.ecp.db.VacancyDao;
 import by.ecp.entity.Company;
 import by.ecp.entity.Vacancy;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.IsNull.notNullValue;

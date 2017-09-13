@@ -10,46 +10,44 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import static org.springframework.test.util.AssertionErrors.assertEquals;
-
 /**
  * Created by User on 17.07.2017.
  */
 public class CommonBaseGameDaoTest extends BaseTest {
     @Autowired
-    private GameDao gameDao;
-    @Autowired
-    private CompanyDao companyDao;
-    @Autowired
-    private GenreDao genreDao;
-    @Autowired
-    private PaymentModelDao paymentModelDao;
-    @Autowired
-    private SettingDao settingDao;
-    @Autowired
-    private StageDao stageDao;
-    @Autowired
-    private PlatformDao platformDao;
-    @Autowired
-    private CommonBaseGameDao commonBaseGameDao;
+        private GameDao gameDao;
+        @Autowired
+        private CompanyDao companyDao;
+        @Autowired
+        private GenreDao genreDao;
+        @Autowired
+        private PaymentModelDao paymentModelDao;
+        @Autowired
+        private SettingDao settingDao;
+        @Autowired
+        private StageDao stageDao;
+        @Autowired
+        private PlatformDao platformDao;
+        @Autowired
+        private CommonBaseGameDao commonBaseGameDao;
 
-    @Test
-    public void findAllOrderDateDescTest() {
-        Company company = new Company();
-        company.setName("Valve");
-        companyDao.save(company);
-        Genre genre = new Genre();
-        genre.setName("Гонки");
-        genreDao.save(genre);
-        PaymentModel paymentModel = new PaymentModel();
-        paymentModel.setName("Подписка");
-        paymentModelDao.save(paymentModel);
-        Setting setting = new Setting();
-        setting.setName("Фэнтези");
-        settingDao.save(setting);
-        Stage stage = new Stage();
-        stage.setName("Ранний доступ");
-        stageDao.save(stage);
+        @Test
+        public void findAllOrderDateDescTest() {
+            Company company = new Company();
+            company.setName("Valve");
+            companyDao.save(company);
+            Genre genre = new Genre();
+            genre.setName("Гонки");
+            genreDao.save(genre);
+            PaymentModel paymentModel = new PaymentModel();
+            paymentModel.setName("Подписка");
+            paymentModelDao.save(paymentModel);
+            Setting setting = new Setting();
+            setting.setName("Фэнтези");
+            settingDao.save(setting);
+            Stage stage = new Stage();
+            stage.setName("Ранний доступ");
+            stageDao.save(stage);
 
         Platform platform1 = new Platform();
         platform1.setName("X-Box");

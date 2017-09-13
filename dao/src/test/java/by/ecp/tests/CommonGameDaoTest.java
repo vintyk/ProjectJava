@@ -1,14 +1,11 @@
 package by.ecp.tests;
 
-import by.ecp.common.BaseDao;
 import by.ecp.db.*;
 import by.ecp.entity.*;
-import by.ecp.tests.BaseDaoTest;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import static org.hamcrest.Matchers.hasSize;

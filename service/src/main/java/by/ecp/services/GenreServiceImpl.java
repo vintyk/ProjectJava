@@ -2,7 +2,6 @@ package by.ecp.services;
 
 import by.ecp.db.GenreDao;
 import by.ecp.entity.Genre;
-import by.ecp.entity.Job;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,7 +1,6 @@
 package by.ecp.db;
 
 import by.ecp.common.BaseDao;
-import by.ecp.entity.CommonBaseGame;
 import by.ecp.entity.Publication;
 import java.time.LocalDate;
 import java.util.List;

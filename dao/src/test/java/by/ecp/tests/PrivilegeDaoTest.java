@@ -1,7 +1,6 @@
 package by.ecp.tests;
 
 import by.ecp.common.BaseDao;
-import by.ecp.common.BaseDaoImpl;
 import by.ecp.db.PrivilegeDaoImpl;
 import by.ecp.entity.Privilege;
 import org.springframework.beans.factory.annotation.Autowired;

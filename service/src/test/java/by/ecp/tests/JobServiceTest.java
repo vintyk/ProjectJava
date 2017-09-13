@@ -1,15 +1,12 @@
 package by.ecp.tests;
 
 import by.ecp.dto.JobVacancyDto;
-import by.ecp.dto.SystemUserDto;
 import by.ecp.entity.*;
 import by.ecp.services.*;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertEquals;

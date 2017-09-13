@@ -1,15 +1,12 @@
 package by.ecp.tests;
 
-import by.ecp.entity.PaymentModel;
 import by.ecp.entity.Privilege;
-import by.ecp.services.PaymentModelService;
 import by.ecp.services.PrivilegeService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
-import static by.ecp.entity.QPaymentModel.paymentModel;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
 

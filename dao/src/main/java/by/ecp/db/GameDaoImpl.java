@@ -2,9 +2,7 @@ package by.ecp.db;
 
 import by.ecp.common.BaseDaoImpl;
 import by.ecp.entity.*;
-import lombok.EqualsAndHashCode;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
 
 import java.io.Serializable;

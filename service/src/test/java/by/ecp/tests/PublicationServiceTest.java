@@ -1,7 +1,6 @@
 package by.ecp.tests;
 
 import by.ecp.dto.GameDto;
-import by.ecp.dto.JobVacancyDto;
 import by.ecp.dto.PublicationDto;
 import by.ecp.entity.*;
 import by.ecp.services.*;

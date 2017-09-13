@@ -1,6 +1,5 @@
 package by.ecp.services;
 
-import by.ecp.entity.Genre;
 import by.ecp.entity.PaymentModel;
 
 import java.util.List;

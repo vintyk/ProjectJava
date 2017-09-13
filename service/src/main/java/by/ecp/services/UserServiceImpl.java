@@ -4,7 +4,6 @@ import by.ecp.db.SystemUserDao;
 import by.ecp.entity.Gender;
 import by.ecp.entity.Privilege;
 import by.ecp.entity.SystemUser;
-import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
